@@ -79,7 +79,7 @@ button {
 .wordmark {
   color: var(--deep);  /* 글자색 */
   font-size: 23px;     /* 글자 크기 */
-  font-weight: 900;    /* 글자 굵기 */
+  font-weight: 800;    /* 글자 굵기 */
   text-decoration: none; /* 링크 밑줄 제거 */
 }
 
@@ -135,7 +135,7 @@ main {
 /* 메인 포스터 이미지 */
 .poster-frame img {
   display: block;   /* 이미지 아래 기본 여백 제거 */
-  width: 95%;      /* 포스터 틀 전체 너비 */
+  width: 100%;      /* 포스터 틀 전체 너비 */
   height: 100%;     /* 포스터 틀 전체 높이 */
 
   /*
@@ -291,7 +291,7 @@ main {
 
   font-family: "Gowun Batang", serif; /* 글꼴 */
   font-size: 14px;   /* 글자 크기 */
-  font-weight: 700;  /* 글자 굵기 */
+  font-weight: 500;  /* 글자 굵기 */
 }
 
 /* MUSICAL, LOBBY PLAY 등의 영문 글자 */
@@ -511,8 +511,8 @@ main {
 .play-card b {
   display: inline;
   margin-right: 10px;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 15px;
+  line-height: 18px;
 }
 
 .play-card > span {
@@ -530,9 +530,9 @@ main {
   min-height: 57px;
   margin: 17px 0 0;
   font-size: 19px;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.45;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.1em;
   text-align: left;
   word-break: keep-all;
   overflow-wrap: normal;
@@ -602,7 +602,7 @@ main {
   display: block;
   height: 22px;
   margin: 0;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 800;
   line-height: 22px;
 }
