@@ -2885,3 +2885,18 @@ button {
     font-size: 12px;
   }
 }
+
+/* 메인 포스터 전체 이미지 표시 */
+.poster-frame {
+  height: auto;
+  aspect-ratio: auto;
+}
+
+.poster-frame img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+}
