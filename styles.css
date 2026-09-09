@@ -3271,3 +3271,8 @@ button {
   padding-top: 0;
   padding-bottom: 0;
 }
+
+/* 로비플레이 번호와 이모티콘 높이 정렬 */
+.play-card > span {
+  transform: translateY(3px);
+}
