@@ -2788,3 +2788,100 @@ button {
     font-size: 10px;
   }
 }
+
+/* ==================================================
+   섹션 제목 최종 정렬
+================================================== */
+
+.section-heading {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: auto auto;
+
+  column-gap: 9px;
+  row-gap: 8px;
+
+  align-items: start;
+
+  margin-bottom: 32px;
+}
+
+/* 내부 div의 구조 제거 */
+.section-heading > div {
+  display: contents;
+}
+
+/* 01, 02, 03 등의 숫자 */
+.section-heading > span {
+  grid-column: 1;
+  grid-row: 1;
+
+  min-width: auto;
+  margin: 0;
+  padding: 0;
+
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+/* 숫자 뒤 가운데점 */
+.section-heading > span::after {
+  content: " ·";
+}
+
+/* 오늘의 뮤지컬, 로비플레이 등의 한글 제목 */
+.section-heading h2 {
+  grid-column: 2;
+  grid-row: 1;
+
+  margin: 0;
+  padding: 0;
+
+  font-size: 27px;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.045em;
+
+  word-break: keep-all;
+}
+
+/* MUSICAL, LOBBY PLAY 등의 영문 제목 */
+.section-heading p {
+  grid-column: 2;
+  grid-row: 2;
+
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+
+  color: var(--rose);
+
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+
+  text-align: left;
+}
+
+
+/* 작은 휴대폰 화면 */
+@media (max-width: 380px) {
+  .section-heading {
+    column-gap: 7px;
+    row-gap: 7px;
+  }
+
+  .section-heading > span,
+  .section-heading h2 {
+    font-size: 24px;
+  }
+
+  .section-heading p {
+    font-size: 12px;
+  }
+}
