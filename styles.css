@@ -2460,3 +2460,188 @@ body.detail-open .bottom-nav {
 
   white-space: nowrap;
 }
+
+/* ==================================================
+   휴대폰 화면 최종 보정
+================================================== */
+
+@media (max-width: 600px) {
+  /* --------------------------------
+     하단 메뉴를 화면 아래에 고정
+  -------------------------------- */
+
+  .bottom-nav {
+    position: fixed !important;
+    right: 12px;
+    bottom: max(
+      10px,
+      env(safe-area-inset-bottom)
+    );
+    left: 12px;
+    z-index: 100;
+
+    width: auto;
+    min-height: 68px;
+    margin: 0;
+    padding: 7px 8px;
+
+    border: 1px solid rgb(82 45 56 / 10%);
+    border-radius: 22px;
+
+    background: rgb(255 255 255 / 96%);
+
+    box-shadow:
+      0 12px 35px rgb(82 45 56 / 18%),
+      0 2px 8px rgb(82 45 56 / 6%);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    /* 기존 가운데 정렬용 이동값 제거 */
+    transform: none;
+  }
+
+  body {
+    padding-bottom: calc(
+      100px + env(safe-area-inset-bottom)
+    );
+  }
+
+
+  /* --------------------------------
+     뮤지컬 소개 카드
+     오른쪽 글자 영역을 넓게 사용
+  -------------------------------- */
+
+  .feature-card {
+    grid-template-columns: 40% minmax(0, 1fr);
+  }
+
+  .feature-copy {
+    min-width: 0;
+    padding: 26px 18px;
+  }
+
+  .feature-copy .tag,
+  .feature-copy h3,
+  .feature-copy > p,
+  .feature-copy .text-link {
+    width: 100%;
+    max-width: none;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .feature-copy > p {
+    font-size: 13px;
+    line-height: 1.75;
+    letter-spacing: -0.04em;
+
+    text-align: left;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+
+  /* --------------------------------
+     시놉시스 글자 영역 확대
+  -------------------------------- */
+
+  .expandable {
+    padding: 32px 28px 38px;
+  }
+
+  .expandable p {
+    width: 100%;
+    max-width: none;
+
+    margin: 0 0 22px;
+
+    font-size: 14px;
+    line-height: 1.8;
+    letter-spacing: -0.035em;
+
+    text-align: left;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  .expandable .synopsis-lead {
+    width: 100%;
+    max-width: none;
+
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+
+  /* --------------------------------
+     인물 상세 팝업 글자 영역 확대
+  -------------------------------- */
+
+  #character-dialog {
+    width: calc(100% - 28px);
+    max-width: none;
+    max-height: calc(
+      100dvh - 36px
+    );
+
+    margin: auto;
+
+    border-radius: 24px;
+  }
+
+  .character-header {
+    gap: 15px;
+    padding: 28px 58px 25px 24px;
+  }
+
+  .character-symbol {
+    width: 66px;
+    height: 66px;
+
+    font-size: 28px;
+  }
+
+  #character-dialog .character-name {
+    font-size: 28px;
+  }
+
+  .character-details {
+    gap: 12px;
+    padding: 20px 18px 26px;
+  }
+
+  .character-item {
+    width: 100%;
+    padding: 22px 20px;
+  }
+
+  .character-item strong,
+  .character-item p {
+    width: 100%;
+    max-width: none;
+  }
+
+  .character-item p {
+    margin-top: 13px;
+
+    font-size: 14px;
+    line-height: 1.75;
+    letter-spacing: -0.035em;
+
+    text-align: left;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  .character-quote-card .character-quote {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .character-description-card .character-description {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
