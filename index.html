@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <meta name="theme-color" content="#e7b8c5">
+  <meta name="description" content="여우사이 행사 가이드북">
+
+  <title>여우사이 | 행사 가이드</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="detail.css">
+</head>
+
+<body>
+  <!-- 상단 메뉴 -->
+  <header class="topbar">
+    <a class="wordmark" href="#home" aria-label="처음으로 이동">
+      여우사이
+    </a>
+
+    <button class="ticket-button" type="button" data-open-ticket>
+      나의 티켓
+    </button>
+  </header>
+
+  <main>
+    <!-- 메인 화면 -->
+    <section class="hero" id="home">
+      <div class="poster-frame">
+        <img
+          src="assets/main-poster.png"
+          alt="여우사이 행사 메인 포스터"
+        >
+      </div>
+
+      <p class="eyebrow">HERE IS OUR LOVE STORY</p>
+
+      <h1>
+        <span class="pink-letter">여</span>기
+        <span class="pink-letter">우</span>리<br>
+        <span class="pink-letter">사</span>랑
+        <span class="pink-letter">이</span>야기
+      </h1>
+
+      <div class="event-meta">
+        <span>2026. 10. 01</span>
+        <i aria-hidden="true"></i>
+        <span>삼덕교회 교육관</span>
+      </div>
+
+      <div class="quick-grid" aria-label="빠른 메뉴">
+        <a href="#schedule">
+          <strong>시간표</strong>
+        </a>
+
+        <a href="#map">
+          <strong>안내도</strong>
+        </a>
+
+        <a href="#play">
+          <strong>로비 플레이</strong>
+        </a>
+      </div>
+    </section>
+
+    <!-- 뮤지컬 -->
+    <section class="section" id="musical">
+      <div class="section-heading">
+        <span>01</span>
+
+        <div>
+          <p>MUSICAL</p>
+          <h2>오늘의 뮤지컬</h2>
+        </div>
+      </div>
+
+      <article class="feature-card">
+        <div class="placeholder-art">
+          <span>
+            뮤지컬<br>
+            포스터
+          </span>
+        </div>
+
+        <div class="feature-copy">
+          <span class="tag">MAIN STAGE</span>
+
+          <h3>찾아 주셔서 고맙습니다</h3>
+
+          <p>
+            잃어버린 물건을 찾아 유실물 센터에 모인 세 청년.
+            그곳에서 이들은 물건보다 더 중요한 것을 마주하게 됩니다.
+          </p>
+
+          <button
+            class="text-link"
+            type="button"
+            data-expand="synopsis"
+          >
+            시놉시스 보기 <span>＋</span>
+          </button>
+        </div>
+
+        <div class="expandable" id="synopsis">
+          <p class="synopsis-lead">
+            “오늘도 ‘안심행’ 열차 들어옵니다.
+            손에 든 거 꽉 잡으세요!”
+          </p>
+
+          <p>
+            남들보다 한 발짝이라도 먼저 가기 위해 5G 속도로
+            달리는 세상. 내 존재의 이유이자 생명줄 같았던
+            물건들을 지하철 환승통로에서 잃어버린 세 청년이
+            있습니다.
+          </p>
+
+          <p>
+            멘붕에 빠진 이들 앞에 기적처럼 나타난 낡은 문 하나.
+            잃어버린 물건을 당장 내놓으라며 아우성치는 이들에게
+            유실물 센터의 미스터리한 관리인은 따뜻한 찻잔을
+            건네며 예상치 못한 이야기를 시작합니다.
+          </p>
+
+          <p>
+            과연 이들은 잃어버린 물건을 찾고 무사히
+            ‘안심’에 도착할 수 있을까요?
+          </p>
+        </div>
+      </article>
+
+      <!-- 등장인물 -->
+      <h3 class="subheading">함께 만든 사람들</h3>
+
+      <div class="profile-row">
+        <button
+          class="profile"
+          type="button"
+          data-character="haru"
+        >
+          <div class="profile-image">
+            <span>📱</span>
+          </div>
+
+          <strong>심하루</strong>
+          <span>20세 · 신입생</span>
+        </button>
+
+        <button
+          class="profile"
+          type="button"
+          data-character="jeongseok"
+        >
+          <div class="profile-image">
+            <span>📘</span>
+          </div>
+
+          <strong>강정석</strong>
+          <span>복학생</span>
+        </button>
+
+        <button
+          class="profile"
+          type="button"
+          data-character="seoyeon"
+        >
+          <div class="profile-image">
+            <span>📄</span>
+          </div>
+
+          <strong>이서연</strong>
+          <span>4학년 · 취준생</span>
+        </button>
+
+        <button
+          class="profile"
+          type="button"
+          data-character="station"
+        >
+          <div class="profile-image">
+            <span>🚊</span>
+          </div>
+
+          <strong>역무원</strong>
+          <span>안심행 안내자</span>
+        </button>
+
+        <button
+          class="profile"
+          type="button"
+          data-character="manager"
+        >
+          <div class="profile-image">
+            <span>☕</span>
+          </div>
+
+          <strong>관리인</strong>
+          <span>유실물 센터 지킴이</span>
+        </button>
+      </div>
+
+      <p class="profile-guide">
+        인물을 누르면 자세한 소개를 볼 수 있어요.
+      </p>
+    </section>
+
+    <!-- 로비플레이 -->
+    <section class="section tinted" id="play">
+      <div class="section-heading">
+        <span>02</span>
+
+        <div>
+          <p>LOBBY PLAY</p>
+          <h2>로비플레이</h2>
+        </div>
+      </div>
+
+      <p class="section-intro">
+        공연 전후, 마음 가는 곳부터 천천히 둘러보세요.
+      </p>
+
+      <div class="play-grid">
+        <button class="play-card" type="button" data-play="fourcut">
+          <b>01</b>
+          <span>▣</span>
+          <h3>인생네컷</h3>
+          <i>자세히 보기 →</i>
+        </button>
+
+        <button class="play-card" type="button" data-play="mirror">
+          <b>02</b>
+          <span>◇</span>
+          <h3>포토존</h3>
+          <i>자세히 보기 →</i>
+        </button>
+
+        <button class="play-card" type="button" data-play="scratch">
+          <b>03</b>
+          <span>✦</span>
+          <h3>스크래치카드</h3>
+          <i>자세히 보기 →</i>
+        </button>
+
+        <button class="play-card" type="button" data-play="guestbook">
+          <b>04</b>
+          <span>✎</span>
+          <h3>방명록</h3>
+          <i>자세히 보기 →</i>
+        </button>
+
+        <button
+          class="play-card"
+          type="button"
+          data-play="personalcolor"
+        >
+          <b>05</b>
+          <span>◐</span>
+          <h3>퍼스널컬러</h3>
+          <i>자세히 보기 →</i>
+        </button>
+
+        <button class="play-card" type="button" data-play="pharmacy">
+          <b>06</b>
+          <span>＋</span>
+          <h3>마음의 약국</h3>
+          <i>자세히 보기 →</i>
+        </button>
+
+        <button class="play-card" type="button" data-play="shrinkles">
+          <b>07</b>
+          <span>♧</span>
+          <h3>슈링클스</h3>
+          <i>자세히 보기 →</i>
+        </button>
+
+        <button class="play-card" type="button" data-play="jenga">
+          <b>08</b>
+          <span>▥</span>
+          <h3>대형 젠가</h3>
+          <i>자세히 보기 →</i>
+        </button>
+
+        <button class="play-card" type="button" data-play="draw">
+          <b>09</b>
+          <span>?</span>
+          <h3>대왕 종이판 뽑기</h3>
+          <i>자세히 보기 →</i>
+        </button>
+
+        <button
+          class="play-card"
+          type="button"
+          data-play="musicalboard"
+        >
+          <b>10</b>
+          <span>♡</span>
+          <h3>뮤지컬 소개판</h3>
+          <i>자세히 보기 →</i>
+        </button>
+      </div>
+    </section>
+
+    <!-- 시간표 -->
+    <section class="section" id="schedule">
+      <div class="section-heading">
+        <span>03</span>
+
+        <div>
+          <p>TIMETABLE</p>
+          <h2>오늘의 시간표</h2>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div>
+          <time>00:00</time>
+          <span></span>
+
+          <p>
+            <strong>행사 시작</strong>
+            <small>시간 추후 안내</small>
+          </p>
+        </div>
+
+        <div>
+          <time>00:00</time>
+          <span></span>
+
+          <p>
+            <strong>로비 플레이</strong>
+            <small>10가지 프로그램 자유 체험</small>
+          </p>
+        </div>
+
+        <div class="active">
+          <time>00:00</time>
+          <span></span>
+
+          <p>
+            <strong>뮤지컬 공연</strong>
+            <small>공연 전에 입장해주세요</small>
+          </p>
+        </div>
+
+        <div>
+          <time>00:00</time>
+          <span></span>
+
+          <p>
+            <strong>행사 마무리</strong>
+            <small>시간 추후 안내</small>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 공간 안내 -->
+    <section class="section tinted" id="map">
+      <div class="section-heading">
+        <span>04</span>
+
+        <div>
+          <p>MAP &amp; GUIDE</p>
+          <h2>공간 안내</h2>
+        </div>
+      </div>
+
+      <div class="map-placeholder">
+        <span>
+          배치도 이미지가<br>
+          들어갈 자리
+        </span>
+      </div>
+
+      <div class="notice-card">
+        <strong>잠깐, 확인해주세요</strong>
+
+        <p>
+          입장과 행사 이용에 필요한 안내사항을 정리합니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- 팔로우 이벤트 -->
+    <section class="section event-section" id="event">
+      <div class="section-heading">
+        <span>05</span>
+
+        <div>
+          <p>FOLLOW EVENT</p>
+          <h2>팔로우 이벤트</h2>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <span class="seal">♡</span>
+
+        <p>
+          공식 계정을 팔로우하고<br>
+          현장 이벤트에 참여해보세요.
+        </p>
+
+        <button type="button">
+          이벤트 자세히 보기
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- 하단 고정 메뉴 -->
+  <nav class="bottom-nav" aria-label="주요 메뉴">
+    <a href="#home">
+      <span>⌂</span>
+      홈
+    </a>
+
+    <a href="#musical">
+      <span>♪</span>
+      뮤지컬
+    </a>
+
+    <a href="#play">
+      <span>✦</span>
+      로비
+    </a>
+
+    <a href="#schedule">
+      <span>◷</span>
+      시간표
+    </a>
+
+    <a href="#map">
+      <span>⌖</span>
+      안내
+    </a>
+  </nav>
+
+  <!-- 로비플레이 상세 화면 -->
+  <section
+    class="play-detail"
+    id="play-detail"
+    aria-hidden="true"
+  >
+    <header class="detail-topbar">
+      <button
+        class="detail-back"
+        type="button"
+        aria-label="뒤로 가기"
+      >
+        ←
+      </button>
+
+      <span>LOBBY PLAY</span>
+
+      <button
+        class="detail-home"
+        type="button"
+        aria-label="홈으로 이동"
+      >
+        ⌂
+      </button>
+    </header>
+
+    <div class="detail-hero">
+      <div class="detail-icon">▣</div>
+
+      <p class="detail-kicker">
+        01 · LOBBY PLAY
+      </p>
+
+      <h2 class="detail-title">인생네컷</h2>
+
+      <p class="detail-summary"></p>
+    </div>
+
+    <div class="detail-content">
+      <section>
+        <h3>어떤 체험인가요?</h3>
+        <p class="detail-description"></p>
+      </section>
+
+      <div class="detail-info">
+        <div>
+          <small>장소</small>
+          <strong>추후 안내</strong>
+        </div>
+
+        <div>
+          <small>운영 시간</small>
+          <strong>추후 안내</strong>
+        </div>
+      </div>
+
+      <section>
+        <h3>참여 방법</h3>
+        <ol class="detail-steps"></ol>
+      </section>
+    </div>
+  </section>
+
+<!-- 등장인물 상세 팝업 -->
+<dialog id="character-dialog">
+  <button
+    class="close character-close"
+    type="button"
+    aria-label="닫기"
+  >
+    ×
+  </button>
+
+  <!-- 인물 상단 정보 -->
+  <header class="character-header">
+    <div class="character-symbol">📱</div>
+
+    <div>
+      <p class="character-type">분실자 1</p>
+      <h2 class="character-name">심하루</h2>
+      <p class="character-meta">20세 · 신입생</p>
+    </div>
+  </header>
+
+  <!-- 인물 세부 정보 -->
+  <div class="character-details">
+    <section class="character-item character-lost-card">
+      <strong>
+        <span>LOST ITEM</span>
+        분실물
+      </strong>
+
+      <p class="character-lost"></p>
+    </section>
+
+    <section class="character-item character-quote-card">
+      <strong>
+        <span>LINE</span>
+        주요 대사
+      </strong>
+
+      <p class="character-quote"></p>
+    </section>
+
+    <section class="character-item character-description-card">
+      <strong>
+        <span>PROFILE</span>
+        인물 소개
+      </strong>
+
+      <p class="character-description"></p>
+    </section>
+  </div>
+</dialog>
+
+  <!-- 티켓 팝업 -->
+  <dialog id="ticket-dialog">
+    <button class="close" type="button" aria-label="닫기">
+      ×
+    </button>
+
+    <p class="eyebrow">ADMISSION TICKET</p>
+
+    <h2>여우사이</h2>
+
+    <div class="ticket-stub">
+      <div>
+        <small>DATE</small>
+        <strong>2026. 10. 01</strong>
+      </div>
+
+      <div>
+        <small>PLACE</small>
+        <strong>삼덕교회 교육관</strong>
+      </div>
+    </div>
+
+    <p class="ticket-note">
+      이 화면을 입장할 때 보여주세요.
+    </p>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
