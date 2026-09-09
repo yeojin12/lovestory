@@ -3276,3 +3276,25 @@ button {
 .play-card > span {
   transform: translateY(3px);
 }
+
+/* 하단 메뉴 아이콘 박스 중앙 정렬 */
+.bottom-nav a span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+  margin: 0 0 4px;
+  padding: 2px 0 0;
+
+  border-radius: 10px;
+
+  background: #f7e9ee;
+  color: var(--rose);
+
+  font-size: 16px;
+  line-height: 1;
+
+  text-align: center;
+}
