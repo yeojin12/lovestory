@@ -2645,3 +2645,29 @@ body.detail-open .bottom-nav {
     line-height: 1.8;
   }
 }
+
+/* ==================================================
+   메인 제목 위치와 뮤지컬 구분선 수정
+================================================== */
+
+/* 영문 문구, 메인 제목, 날짜를 함께 아래로 이동 */
+.hero .eyebrow,
+.hero h1,
+.hero .event-meta {
+  transform: translateY(6px);
+}
+
+/* 메인 화면과 뮤지컬 사이 구분선을 점선으로 변경 */
+#musical::before {
+  height: 0;
+
+  border-top: 1px dashed rgb(82 45 56 / 25%);
+
+  background: transparent;
+}
+
+/* 메인 제목만 아래로 이동하고 자간 넓히기 */
+.hero h1 {
+  transform: translateY(12px);
+  letter-spacing: 0.025em;
+}
