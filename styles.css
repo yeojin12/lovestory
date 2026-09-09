@@ -494,65 +494,193 @@ main {
   background: #ffffff;
 }
 
-/* 로비플레이 카드 한 개 */
+/* 로비플레이 카드 내부 위치 통일 */
 .play-card {
-  position: relative; /* 내부 요소 위치 기준 */
-
-  min-height: 205px; /* 카드 최소 높이 */
-  padding: 26px;     /* 카드 안쪽 여백 */
-
-  border: 0; /* 버튼 기본 테두리 제거 */
-
-  /* 카드 오른쪽 구분선 */
-  border-right: 1px solid #f2e7e3;
-
-  /* 카드 아래쪽 구분선 */
-  border-bottom: 1px solid #f2e7e3;
-
-  background: #ffffff; /* 카드 배경 */
-  color: var(--deep);  /* 카드 글자색 */
-  text-align: left;    /* 글자 왼쪽 정렬 */
+  display: flex;
+  min-width: 0;
+  min-height: 205px;
+  padding: 38px 28px 32px;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #ffffff;
+  color: var(--deep);
+  text-align: left;
 }
 
-/* 오른쪽 열 카드의 오른쪽 테두리 제거 */
-.play-card:nth-child(even) {
-  border-right: 0;
-}
-
-/* 카드 번호 01, 02 등 */
+/* 번호와 아이콘 */
 .play-card b {
-  margin-right: 10px; /* 번호와 아이콘 사이 간격 */
-  font-size: 14px;    /* 글자 크기 */
+  display: inline;
+  margin-right: 10px;
+  font-size: 14px;
+  line-height: 20px;
 }
 
-/* 카드 아이콘 */
 .play-card > span {
+  display: block;
+  min-height: 20px;
+  margin: 0;
   font-size: 17px;
+  line-height: 20px;
 }
 
-/* 카드 제목 */
+/* 프로그램 이름 */
 .play-card h3 {
-  margin: 14px 0 18px;
-  /*
-    위쪽 14px
-    좌우 0
-    아래쪽 18px
-  */
-
-  font-size: 21px;         /* 글자 크기 */
-  line-height: 1.35;       /* 두 줄일 때 행간 */
-  letter-spacing: -0.04em; /* 자간 */
+  width: 100%;
+  max-width: none;
+  min-height: 57px;
+  margin: 17px 0 0;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.45;
+  letter-spacing: -0.055em;
+  text-align: left;
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 
 /* 자세히 보기 */
 .play-card i {
-  color: var(--deep); /* 글자색 */
-  font-size: 12px;    /* 글자 크기 */
-  font-style: normal; /* 기울임 제거 */
-
-  text-decoration: underline; /* 밑줄 */
-  text-underline-offset: 4px;  /* 글자와 밑줄 사이 간격 */
+  display: inline-block;
+  margin-top: auto;
+  padding: 0;
+  color: var(--deep);
+  font-size: 12px;
+  font-style: normal;
+  line-height: 18px;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
+
+/* 09번 제목 한 줄 표시 */
+.play-card:nth-child(9) h3 {
+  font-size: 16px;
+  letter-spacing: -0.075em;
+  white-space: nowrap;
+}
+
+/* ==================================================
+   로비플레이 카드 최종 정렬
+   이 부분이 앞쪽의 중복 설정보다 우선 적용됨
+================================================== */
+
+.play-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #ffffff;
+}
+
+.play-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 205px;
+  padding: 38px 28px 32px;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 0;
+  border-right: 1px solid #f0e2e2;
+  border-bottom: 1px solid #f0e2e2;
+  background: #ffffff;
+  color: var(--deep);
+  text-align: left;
+}
+
+.play-card:nth-child(even) {
+  border-right: 0;
+}
+
+.play-card:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+/* 번호 */
+.play-card b {
+  display: block;
+  height: 22px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 22px;
+}
+
+/* 번호 바로 옆 아이콘 */
+.play-card > span {
+  position: absolute;
+  top: 38px;
+  left: 63px;
+  display: block;
+  width: auto;
+  min-height: 0;
+  height: 22px;
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+  line-height: 22px;
+  vertical-align: initial;
+}
+
+/* 프로그램 이름 */
+.play-card h3 {
+  width: 100%;
+  max-width: none;
+  min-height: 57px;
+  margin: 17px 0 0;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.055em;
+  text-align: left;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 자세히 보기 위치를 모든 카드에서 동일하게 고정 */
+.play-card i {
+  display: inline-block;
+  margin-top: auto;
+  padding: 0;
+  color: var(--deep);
+  font-size: 12px;
+  font-style: normal;
+  line-height: 18px;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.play-card:active {
+  background: #fcf7f8;
+}
+
+/* 09번 제목은 한 줄로 표시 */
+.play-card:nth-child(9) h3 {
+  font-size: 15px;
+  letter-spacing: -0.075em;
+  white-space: nowrap;
+}
+
+/* 아주 좁은 휴대폰에서도 09번 제목 한 줄 유지 */
+@media (max-width: 370px) {
+  .play-card {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  .play-card > span {
+    left: 57px;
+  }
+
+  .play-card:nth-child(9) h3 {
+    font-size: 13px;
+    letter-spacing: -0.085em;
+  }
+}
+
 
 /* 카드를 누르는 순간 배경색 변화 */
 .play-card:active {
@@ -1426,4 +1554,909 @@ dialog h2 {
 
   font-size: 12px;
   line-height: 20px;
+}
+
+/* ==================================================
+   메인 화면과 오늘의 뮤지컬 사이 구분선
+================================================== */
+
+#musical {
+  position: relative; /* 구분선 위치의 기준 */
+}
+
+#musical::before {
+  position: absolute;
+  top: 0;      /* 뮤지컬 영역 맨 위 */
+  right: 36px; /* 오른쪽 여백 */
+  left: 36px;  /* 왼쪽 여백 */
+
+  height: 1px; /* 선 굵기 */
+  background: rgb(82 45 56 / 18%); /* 연한 갈색 */
+
+  content: "";
+}
+
+/* ==================================================
+   메인 상단바를 티켓 모양으로 변경
+================================================== */
+
+.topbar {
+  position: relative;
+
+  height: 64px;
+
+  border: 1px solid rgb(82 45 56 / 12%);
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  box-shadow: 0 7px 20px rgb(82 45 56 / 8%);
+}
+
+/* 티켓 왼쪽의 반원형 홈 */
+.topbar::before {
+  position: absolute;
+  top: 50%;
+  left: -1px;
+
+  width: 12px;
+  height: 22px;
+
+  border-radius: 0 20px 20px 0;
+  background: var(--paper);
+
+  content: "";
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* 티켓 오른쪽의 반원형 홈 */
+.topbar::after {
+  position: absolute;
+  top: 50%;
+  right: -1px;
+
+  width: 12px;
+  height: 22px;
+
+  border-radius: 20px 0 0 20px;
+  background: var(--paper);
+
+  content: "";
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* 왼쪽 여우사이 글자 */
+.wordmark {
+  margin-left: 8px;
+}
+
+/* 오른쪽 나의 티켓 영역 */
+.ticket-button {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+
+  margin-right: 8px;
+  padding: 0 8px 0 24px;
+
+  /* 티켓 절취선 */
+  border-left: 1px dashed rgb(82 45 56 / 25%);
+
+  background: transparent;
+}
+
+/* PC 화면에서는 티켓 홈의 배경색 변경 */
+@media (min-width: 700px) {
+  .topbar::before,
+  .topbar::after {
+    background: #ead9d5;
+  }
+}
+
+/* ==================================================
+   뮤지컬·로비플레이 글자 정렬
+================================================== */
+
+/* 뮤지컬 소개글 배분 정렬 */
+.feature-copy > p {
+  text-align: justify;
+  text-justify: inter-character;
+  word-break: keep-all;
+}
+
+/* 시놉시스 내용 배분 정렬 */
+.expandable p {
+  text-align: justify;
+  text-justify: inter-character;
+  word-break: keep-all;
+}
+
+/* 로비플레이 제목 아래 설명 */
+.section-intro {
+  max-width: 430px;
+
+  text-align: justify;
+  text-justify: inter-character;
+  word-break: keep-all;
+}
+
+/* 로비플레이 상세 화면 설명 */
+.detail-summary,
+.detail-description,
+.detail-steps li {
+  text-align: justify;
+  text-justify: inter-character;
+  word-break: keep-all;
+}
+
+
+/* ==================================================
+   뮤지컬 카드 글자 간격 정리
+================================================== */
+
+/* 뮤지컬 제목 */
+.feature-copy h3 {
+  margin: 10px 0 13px;
+
+  font-size: 21px;
+  line-height: 1.35;
+  letter-spacing: -0.04em;
+  word-break: keep-all;
+}
+
+/* 뮤지컬 카드 오른쪽 내용 배치 */
+.feature-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 25px 20px;
+}
+
+/* 시놉시스 보기 버튼 */
+.text-link {
+  align-self: flex-start;
+
+  margin-top: 3px;
+  padding-top: 15px;
+}
+
+
+/* ==================================================
+   메인 화면 빠른 메뉴 버튼
+================================================== */
+
+/* 버튼 세 개를 감싸는 영역 */
+.quick-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+
+  overflow: visible;
+
+  border-radius: 0;
+  background: transparent;
+}
+
+/* 시간표·안내도·로비 플레이 버튼 */
+.quick-grid a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 60px;
+  padding: 14px 8px;
+
+  border: 1px solid rgb(82 45 56 / 8%);
+  border-radius: 14px;
+
+  background: #ffffff;
+  color: var(--deep);
+
+  text-align: center;
+  text-decoration: none;
+
+  box-shadow: 0 5px 15px rgb(82 45 56 / 5%);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+/* 기존 버튼 사이 구분선 제거 */
+.quick-grid a:last-child {
+  border: 1px solid rgb(82 45 56 / 8%);
+}
+
+/* 버튼 글자 */
+.quick-grid strong {
+  display: block;
+
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+}
+
+/* 버튼을 누르는 순간 */
+.quick-grid a:active {
+  background: #f2d9e2;
+
+  box-shadow: 0 2px 8px rgb(82 45 56 / 8%);
+
+  transform: translateY(2px);
+}
+
+
+/* ==================================================
+   현대적인 하단 고정 메뉴
+================================================== */
+
+:root {
+  --nav-height: 78px;
+}
+
+/* 기존 진한 막대 대신 떠 있는 흰색 메뉴 */
+.bottom-nav {
+  position: fixed;
+  bottom: calc(12px + env(safe-area-inset-bottom));
+  left: 50%;
+  z-index: 30;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3px;
+
+  width: min(calc(100% - 24px), 560px);
+  min-height: 68px;
+
+  padding: 7px 8px;
+
+  border: 1px solid rgb(82 45 56 / 10%);
+  border-radius: 22px;
+
+  background: rgb(255 255 255 / 92%);
+
+  box-shadow:
+    0 12px 35px rgb(82 45 56 / 18%),
+    0 2px 8px rgb(82 45 56 / 6%);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transform: translateX(-50%);
+}
+
+/* 하단 메뉴 각각의 버튼 */
+.bottom-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 54px;
+  padding: 5px 2px;
+
+  border-radius: 15px;
+
+  color: #876e76;
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  text-align: center;
+  text-decoration: none;
+
+  transition:
+    color 0.18s ease,
+    background 0.18s ease,
+    transform 0.18s ease;
+}
+
+/* 하단 메뉴 아이콘 */
+.bottom-nav a span {
+  display: grid;
+  place-items: center;
+
+  width: 30px;
+  height: 27px;
+  margin: 0 0 3px;
+
+  border-radius: 10px;
+
+  background: #f7e9ee;
+  color: var(--rose);
+
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* 버튼을 누르는 순간 */
+.bottom-nav a:active {
+  background: #f2d9e2;
+  color: var(--deep);
+
+  transform: scale(0.96);
+}
+
+.bottom-nav a:active span {
+  background: var(--rose);
+  color: #ffffff;
+}
+
+/* 메뉴바에 본문이 가려지지 않게 */
+body {
+  padding-bottom: calc(
+    94px + env(safe-area-inset-bottom)
+  );
+}
+
+/* 로비플레이 상세 화면에서는 메뉴 숨기기 */
+body.detail-open .bottom-nav {
+  display: none;
+}
+
+
+/* ==================================================
+   화면이 매우 좁을 때
+================================================== */
+
+@media (max-width: 370px) {
+  .quick-grid {
+    gap: 6px;
+  }
+
+  .quick-grid strong {
+    font-size: 13px;
+  }
+
+  .bottom-nav {
+    width: calc(100% - 14px);
+  }
+
+  .bottom-nav a {
+    font-size: 9px;
+  }
+
+  .bottom-nav a span {
+    width: 27px;
+    height: 25px;
+    font-size: 15px;
+  }
+}
+
+/* ==================================================
+   좁은 박스 안의 글자 정렬 개선
+================================================== */
+
+/* 뮤지컬 소개글 */
+.feature-copy > p {
+  width: 100%;
+  max-width: 270px;
+
+  margin-right: auto;
+  margin-left: auto;
+
+  text-align: left;       /* 억지로 양쪽을 채우지 않음 */
+  text-justify: auto;
+  word-break: keep-all;   /* 한글 단어 중간이 잘리지 않게 */
+  overflow-wrap: break-word;
+
+  font-size: 14px;
+  line-height: 1.8;
+  letter-spacing: -0.025em;
+}
+
+/* 뮤지컬 카드 오른쪽 영역에 여유 추가 */
+.feature-copy {
+  padding: 30px 27px;
+}
+
+/* 뮤지컬의 MAIN STAGE, 제목, 버튼도 같은 시작점으로 정렬 */
+.feature-copy .tag,
+.feature-copy h3,
+.feature-copy .text-link {
+  width: 100%;
+  max-width: 270px;
+
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* 시놉시스 문단 */
+.expandable p {
+  max-width: 480px;
+
+  margin-right: auto;
+  margin-left: auto;
+
+  text-align: left;
+  text-justify: auto;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+
+  line-height: 1.8;
+  letter-spacing: -0.02em;
+}
+
+/* 로비플레이 소개 문장 */
+.section-intro {
+  max-width: 410px;
+
+  text-align: left;
+  text-justify: auto;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+
+  line-height: 1.75;
+  letter-spacing: -0.02em;
+}
+
+/* 로비플레이 상세 설명 */
+.detail-summary,
+.detail-description,
+.detail-steps li {
+  text-align: left;
+  text-justify: auto;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+
+  letter-spacing: -0.02em;
+}
+
+
+/* ==================================================
+   등장인물 목록의 이름과 설명 위치 개선
+================================================== */
+
+/* 프로필 이름 */
+.profile > strong {
+  width: calc(100% - 16px);
+  min-height: 22px;
+
+  margin: 9px 8px 0;
+  padding: 0;
+
+  font-size: 14px;
+  line-height: 22px;
+
+  text-align: left;
+  word-break: keep-all;
+}
+
+/* 프로필 아래 설명 */
+.profile > span {
+  width: calc(100% - 16px);
+  min-height: 40px;
+
+  margin: 0 8px;
+  padding: 0;
+
+  color: #8e747c;
+
+  font-size: 12px;
+  line-height: 1.45;
+  letter-spacing: -0.025em;
+
+  text-align: left;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+
+/* ==================================================
+   인물 상세 팝업의 글자 여유
+================================================== */
+
+/* 분실물·주요 대사·인물 소개 카드 */
+.character-item {
+  padding: 21px 22px;
+}
+
+/* 카드 안 실제 내용 */
+.character-item p {
+  width: 100%;
+  max-width: 360px;
+
+  margin: 12px auto 0;
+
+  text-align: left;
+  text-justify: auto;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+
+  font-size: 14px;
+  line-height: 1.75;
+  letter-spacing: -0.025em;
+}
+
+/* 카드 제목도 본문과 시작점 통일 */
+.character-item strong {
+  width: 100%;
+  max-width: 360px;
+
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* ==================================================
+   시놉시스 정렬과 줄바꿈 개선
+================================================== */
+
+/* 시놉시스 전체 영역 */
+.expandable {
+  padding: 30px 34px 34px;
+}
+
+/* 시놉시스 문단 */
+.expandable p {
+  width: 100%;
+  max-width: none; /* 기존 480px 제한 해제 */
+
+  margin: 0 0 20px;
+
+  text-align: left;
+  text-justify: auto;
+
+  /* 한글 단어가 중간에서 끊기지 않게 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+
+  font-size: 15px;
+  line-height: 1.8;
+  letter-spacing: -0.025em;
+}
+
+/* 마지막 문단의 아래 여백 제거 */
+.expandable p:last-child {
+  margin-bottom: 0;
+}
+
+/* 첫 번째 인용 문장은 조금 강조 */
+.expandable .synopsis-lead {
+  margin-bottom: 26px;
+
+  color: var(--deep);
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+
+/* ==================================================
+   등장인물 팝업 너비와 정렬 개선
+================================================== */
+
+/* 팝업 자체를 조금 넓게 */
+#character-dialog {
+  width: min(calc(100% - 20px), 480px);
+}
+
+/* 카드 바깥쪽 여백을 조금 줄여 본문 공간 확보 */
+.character-details {
+  gap: 12px;
+  padding: 20px 18px 26px;
+}
+
+/* 각 정보 카드 */
+.character-item {
+  padding: 20px 21px;
+}
+
+/* 카드 제목 */
+.character-item strong {
+  width: 100%;
+  max-width: none;
+
+  margin: 0;
+
+  text-align: left;
+}
+
+/* 카드 본문 */
+.character-item p {
+  width: 100%;
+  max-width: none;
+
+  margin: 12px 0 0;
+
+  text-align: left;
+  text-justify: auto;
+
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+
+  font-size: 14px;
+  line-height: 1.75;
+  letter-spacing: -0.025em;
+}
+
+/* 주요 대사는 일반 설명보다 약간 크게 */
+.character-quote-card .character-quote {
+  font-size: 15px;
+  line-height: 1.75;
+  letter-spacing: -0.03em;
+}
+
+/* 인물 소개는 긴 문장이므로 글자 크기를 안정적으로 설정 */
+.character-description-card .character-description {
+  color: #6f555e;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* 분실물 문장 */
+.character-lost-card .character-lost {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* ==================================================
+   작은 휴대폰 화면 조정
+================================================== */
+
+@media (max-width: 380px) {
+  .expandable {
+    padding: 25px 22px 28px;
+  }
+
+  .expandable p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .expandable .synopsis-lead {
+    font-size: 15px;
+  }
+
+  #character-dialog {
+    width: calc(100% - 14px);
+  }
+
+  .character-details {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .character-item {
+    padding: 18px;
+  }
+
+  .character-item p {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .character-quote-card .character-quote {
+    font-size: 14px;
+  }
+}
+
+/* ==================================================
+   시놉시스와 인물 팝업 글자 안전 영역
+================================================== */
+
+/* 시놉시스 글자 전체를 빨간 선 안쪽으로 제한 */
+.expandable {
+  padding: 34px 48px 40px;
+}
+
+/* 시놉시스 문단 */
+.expandable p {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin: 0 0 22px;
+  padding: 0;
+
+  text-align: left;
+  white-space: normal;
+
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+
+  font-size: 15px;
+  line-height: 1.85;
+  letter-spacing: -0.025em;
+}
+
+/* 마지막 문단 아래 여백 제거 */
+.expandable p:last-child {
+  margin-bottom: 0;
+}
+
+/* 시놉시스 첫 문장 */
+.expandable .synopsis-lead {
+  width: 100%;
+  max-width: 100%;
+
+  margin-bottom: 28px;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.75;
+}
+
+
+/* ==================================================
+   인물 상세 팝업 글자 안전 영역
+================================================== */
+
+/* 카드 내부 좌우 여백 확대 */
+.character-item {
+  width: 100%;
+  min-width: 0;
+
+  padding: 24px 32px;
+
+  box-sizing: border-box;
+}
+
+/* LOST ITEM, 분실물 등의 제목 */
+.character-item strong {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin: 0;
+  padding: 0;
+
+  text-align: left;
+}
+
+/* 카드의 실제 내용 */
+.character-item p {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin: 14px 0 0;
+  padding: 0;
+
+  text-align: left;
+  white-space: normal;
+
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+
+  font-size: 14px;
+  line-height: 1.8;
+  letter-spacing: -0.025em;
+}
+
+/* 주요 대사 */
+.character-quote-card .character-quote {
+  width: 100%;
+  max-width: 100%;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* 인물 소개 */
+.character-description-card .character-description {
+  width: 100%;
+  max-width: 100%;
+
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+
+/* ==================================================
+   화면이 작은 휴대폰에서 여백 조정
+================================================== */
+
+@media (max-width: 380px) {
+  /* 작은 화면에서는 시놉시스 여백을 조금 줄임 */
+  .expandable {
+    padding: 30px 28px 35px;
+  }
+
+  .expandable p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .expandable .synopsis-lead {
+    font-size: 15px;
+  }
+
+  /* 인물 팝업 카드 좌우 여백 */
+  .character-item {
+    padding: 22px 25px;
+  }
+
+  .character-item p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+}
+
+/* ==================================================
+   로비플레이 카드 내부 정렬
+================================================== */
+
+.play-card {
+  min-height: 205px;
+
+  /*
+    위 40px
+    좌우 32px
+    아래 45px
+  */
+  padding: 40px 32px 45px;
+
+  text-align: left;
+}
+
+/* 번호 */
+.play-card b {
+  display: inline-block;
+
+  margin: 0 10px 0 0;
+
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* 번호 옆 아이콘 */
+.play-card > span {
+  display: inline-block;
+
+  margin: 0;
+  padding: 0;
+
+  font-size: 17px;
+  line-height: 20px;
+
+  vertical-align: middle;
+}
+
+/* 로비플레이 제목 */
+.play-card h3 {
+  width: 100%;
+  max-width: 125px;
+
+  margin: 18px 0 22px;
+
+  font-size: 21px;
+  line-height: 1.35;
+  letter-spacing: -0.04em;
+
+  text-align: left;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 자세히 보기 */
+.play-card i {
+  display: inline-block;
+
+  margin: 0;
+  padding: 0;
+
+  font-size: 12px;
+  line-height: 18px;
+
+  white-space: nowrap;
 }

@@ -1,3 +1,7 @@
+/* ========================================
+   로비플레이 상세 화면 전체
+======================================== */
+
 body.detail-open {
   overflow: hidden;
 }
@@ -6,10 +10,16 @@ body.detail-open {
   position: fixed;
   inset: 0;
   z-index: 40;
+
+  overflow-x: hidden;
   overflow-y: auto;
   visibility: hidden;
+
+  border-radius: 20px 20px 0 0;
   background: #ffffff;
+
   transform: translateX(105%);
+
   transition:
     transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1),
     visibility 0.32s;
@@ -20,148 +30,374 @@ body.detail-open {
   transform: translateX(0);
 }
 
+
+/* ========================================
+   상세 화면 상단 흰색 바
+======================================== */
+
 .detail-topbar {
   position: sticky;
   top: 0;
   z-index: 2;
+
   display: grid;
-  grid-template-columns: 50px 1fr 50px;
+  grid-template-columns: 54px minmax(0, 1fr) 54px;
   align-items: center;
+
   height: 64px;
+
+  border-radius: 20px 20px 0 0;
   background: #ffffff;
+
+  box-shadow: 0 1px 0 rgb(82 45 56 / 5%);
 }
 
+/* 가운데 LOBBY PLAY 글자 */
 .detail-topbar span {
+  min-width: 0;
+
   color: var(--rose);
+
   font-size: 12px;
   font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.01em;
+
   text-align: center;
 }
 
+/* 뒤로가기와 홈 버튼 */
 .detail-topbar button {
+  display: grid;
+  place-items: center;
+
   width: 100%;
   height: 100%;
   padding: 0;
+
   border: 0;
   background: transparent;
+
   color: var(--deep);
+
   font-size: 24px;
+  line-height: 1;
 }
 
+/* 왼쪽 뒤로가기 버튼 */
+.detail-back {
+  border-radius: 20px 0 0;
+}
+
+/* 오른쪽 홈 버튼 */
+.detail-home {
+  border-radius: 0 20px 0 0;
+}
+
+
+/* ========================================
+   상세 화면 분홍색 상단 영역
+======================================== */
+
 .detail-hero {
+  display: flex;
   min-height: 405px;
-  padding: 64px 25px 38px;
+  padding: 64px 32px 44px;
+  flex-direction: column;
+  align-items: center;
+
   background: #dda7b9;
+
   text-align: center;
 }
 
+/* 상단 원형 이모티콘 */
 .detail-icon {
   display: grid;
   place-items: center;
+
   width: 82px;
   height: 82px;
   margin: 0 auto 26px;
+
   border-radius: 50%;
+
   background: var(--paper);
   color: var(--deep);
+
   font-size: 32px;
+  line-height: 1;
 }
 
+/* 01 · LOBBY PLAY */
 .detail-kicker {
+  width: 100%;
   margin: 0 0 14px;
+
   color: #8d5366;
+
   font-size: 12px;
   font-weight: 800;
+  line-height: 1.4;
+
+  text-align: center;
 }
 
+/* 인생네컷 등의 상세 제목 */
 .detail-title {
+  width: 100%;
   margin: 0;
+
   font-size: 42px;
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.05em;
+
+  text-align: center;
+  word-break: keep-all;
 }
 
+/* 제목 아래 한 줄 소개 */
 .detail-summary {
-  max-width: 330px;
+  display: block;
+
+  width: 100%;
+  max-width: 380px;
+
   margin: 24px auto 0;
+  padding: 0;
+
   color: var(--deep);
+
   font-size: 15px;
   line-height: 1.65;
+  letter-spacing: -0.025em;
+
+  text-align: center !important;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
+
+/* ========================================
+   상세 설명 본문
+======================================== */
+
 .detail-content {
+  width: 100%;
   max-width: 600px;
-  margin: auto;
-  padding: 38px 30px 85px;
+
+  margin: 0 auto;
+
+  /*
+    위 42px
+    좌우 46px
+    아래 85px
+  */
+  padding: 42px 46px 85px;
+
   background: #ffffff;
 }
 
+/* 본문 각 영역 */
 .detail-content section {
-  padding: 0 0 30px;
+  width: 100%;
+  min-width: 0;
+  padding: 0 0 34px;
 }
 
+/* 어떤 체험인가요?, 참여 방법 */
 .detail-content h3 {
-  margin: 0 0 12px;
+  width: 100%;
+  margin: 0 0 14px;
+
   font-size: 22px;
   font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.04em;
+
+  text-align: left;
+  word-break: keep-all;
 }
 
+/* 상세 설명과 참여 방법 글자 */
 .detail-content section p,
 .detail-content li {
   color: var(--deep);
+
   font-size: 15px;
   line-height: 1.75;
+  letter-spacing: -0.025em;
+
+  text-align: left !important;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
 }
 
+/* 어떤 체험인가요? 설명 */
 .detail-description {
+  width: 100%;
+  max-width: 100%;
+
   margin: 0;
+  padding: 0;
 }
+
+
+/* ========================================
+   장소와 운영 시간
+======================================== */
 
 .detail-info {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
-  margin: 0 0 36px;
+
+  width: 100%;
+  margin: 0 0 38px;
 }
 
+/* 장소·운영 시간 카드 */
 .detail-info div {
+  min-width: 0;
   padding: 18px;
+
   border-radius: 16px;
+
   background: #f2d9e2;
 }
 
+/* 카드 안 글자 */
 .detail-info small,
 .detail-info strong {
   display: block;
+
+  width: 100%;
+
+  text-align: left;
+  word-break: keep-all;
 }
 
 .detail-info small {
   margin-bottom: 5px;
+
   color: var(--deep);
+
   font-size: 11px;
+  line-height: 1.4;
 }
 
 .detail-info strong {
   font-size: 14px;
+  line-height: 1.45;
 }
 
+
+/* ========================================
+   참여 방법 목록
+======================================== */
+
 .detail-steps {
+  width: 100%;
+
   margin: 0;
-  padding-left: 22px;
+
+  /* 숫자까지 본문 안전 영역 안에 들어오게 함 */
+  padding-left: 23px;
 }
 
 .detail-steps li {
+  width: 100%;
   margin-bottom: 8px;
-  padding-left: 5px;
+  padding-left: 4px;
 }
+
+.detail-steps li:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ========================================
+   작은 휴대폰 화면
+======================================== */
+
+@media (max-width: 380px) {
+  .play-detail {
+    border-radius: 16px 16px 0 0;
+  }
+
+  .detail-topbar {
+    height: 60px;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .detail-hero {
+    min-height: 390px;
+    padding: 55px 24px 40px;
+  }
+
+  .detail-icon {
+    width: 76px;
+    height: 76px;
+    margin-bottom: 23px;
+
+    font-size: 29px;
+  }
+
+  .detail-title {
+    font-size: 37px;
+  }
+
+  .detail-summary {
+    max-width: 300px;
+
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .detail-content {
+    padding: 36px 28px 80px;
+  }
+
+  .detail-content h3 {
+    font-size: 20px;
+  }
+
+  .detail-content section p,
+  .detail-content li {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .detail-info {
+    gap: 9px;
+  }
+
+  .detail-info div {
+    padding: 16px 14px;
+  }
+}
+
+
+/* ========================================
+   PC 화면
+======================================== */
 
 @media (min-width: 601px) {
   .play-detail {
     right: auto;
     left: 50%;
+
     width: 600px;
     margin-left: -300px;
+
+    border-radius: 22px 22px 0 0;
+
     box-shadow: 0 0 70px rgb(82 45 56 / 30%);
+  }
+
+  .detail-topbar {
+    border-radius: 22px 22px 0 0;
   }
 }
