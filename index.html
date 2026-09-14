@@ -22,8 +22,8 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="./styles.css?v=37">
-  <link rel="stylesheet" href="./detail.css?v=8">
+  <link rel="stylesheet" href="./styles.css?v=38">
+  <link rel="stylesheet" href="./detail.css?v=10">
 </head>
 
 <body>
@@ -284,40 +284,7 @@
       </div>
     </section>
 
-    <div
-      class="play-picker"
-      id="play-picker"
-      role="dialog"
-      aria-modal="true"
-      aria-hidden="true"
-      aria-labelledby="play-picker-title"
-    >
-      <button
-        class="picker-backdrop"
-        type="button"
-        data-close-picker
-        aria-label="선택창 닫기"
-      ></button>
-
-      <div class="picker-panel">
-        <div class="picker-head">
-          <div>
-            <small>LOBBY PLAY</small>
-            <h3 id="play-picker-title">사진으로 남기기</h3>
-          </div>
-
-          <button
-            type="button"
-            data-close-picker
-            aria-label="선택창 닫기"
-          >
-            ×
-          </button>
-        </div>
-
-        <div class="picker-list"></div>
-      </div>
-    </div>
+    
 
     <section class="section" id="schedule">
       <div class="section-heading">
@@ -422,6 +389,40 @@
       </div>
     </section>
   </main>
+  <div
+    class="play-picker"
+    id="play-picker"
+    role="dialog"
+    aria-modal="true"
+    aria-hidden="true"
+    aria-labelledby="play-picker-title"
+  >
+    <button
+      class="picker-backdrop"
+      type="button"
+      data-close-picker
+      aria-label="선택창 닫기"
+    ></button>
+
+    <div class="picker-panel">
+      <div class="picker-head">
+        <div>
+          <small>LOBBY PLAY</small>
+          <h3 id="play-picker-title">사진으로 남기기</h3>
+        </div>
+
+        <button
+          type="button"
+          data-close-picker
+          aria-label="선택창 닫기"
+        >
+          ×
+        </button>
+      </div>
+
+      <div class="picker-list"></div>
+    </div>
+  </div>
 
   <nav class="bottom-nav" aria-label="주요 메뉴">
     <a href="#home">

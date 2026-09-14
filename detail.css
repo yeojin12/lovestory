@@ -653,3 +653,706 @@ body.detail-open {
     padding: 16px;
   }
 }
+
+/* ==================================================
+   로비플레이 상세페이지 전체 리디자인
+================================================== */
+
+.play-detail {
+  background:
+    radial-gradient(
+      circle at 85% 8%,
+      rgb(232 176 195 / 48%),
+      transparent 29%
+    ),
+    radial-gradient(
+      circle at 8% 70%,
+      rgb(246 216 225 / 54%),
+      transparent 34%
+    ),
+    linear-gradient(
+      155deg,
+      #f7ebe8 0%,
+      #fbf7ef 47%,
+      #ecd7dd 100%
+    );
+
+  color: var(--deep);
+
+  font-family:
+    "Pretendard Variable",
+    Pretendard,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    sans-serif;
+}
+
+
+/* ==================================================
+   상세페이지 상단 바
+================================================== */
+
+.detail-topbar {
+  height: 66px;
+
+  border: 0;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgb(255 255 255 / 72%),
+      rgb(244 218 225 / 62%)
+    );
+
+  box-shadow:
+    0 8px 25px rgb(82 45 56 / 8%);
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+.detail-topbar span {
+  color: var(--rose);
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 580;
+  letter-spacing: 0.14em;
+}
+
+.detail-topbar button {
+  color: var(--deep);
+
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+
+/* ==================================================
+   상세페이지 상단 소개 영역
+================================================== */
+
+.detail-hero {
+  position: relative;
+
+  min-height: 390px;
+  padding: 56px 25px 48px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 78% 17%,
+      rgb(255 255 255 / 54%),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 18% 86%,
+      rgb(208 133 159 / 22%),
+      transparent 32%
+    ),
+    linear-gradient(
+      145deg,
+      rgb(224 168 187 / 78%),
+      rgb(244 207 218 / 64%)
+    );
+
+  text-align: center;
+}
+
+/* 은은한 빛 번짐 */
+.detail-hero::before {
+  position: absolute;
+  top: -90px;
+  right: -70px;
+
+  width: 240px;
+  height: 240px;
+
+  border-radius: 50%;
+
+  background: rgb(255 255 255 / 22%);
+
+  filter: blur(10px);
+
+  content: "";
+  pointer-events: none;
+}
+
+/* 하단 곡선 */
+.detail-hero::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+
+  height: 30px;
+
+  border-radius: 30px 30px 0 0;
+
+  background: rgb(255 250 246 / 74%);
+
+  content: "";
+  pointer-events: none;
+}
+
+/* 상세페이지 아이콘 */
+.detail-icon {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  place-items: center;
+
+  width: 74px;
+  height: 74px;
+  margin: 0 auto 25px;
+
+  border: 0;
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgb(255 255 255 / 72%),
+      rgb(255 245 239 / 42%)
+    );
+
+  color: var(--deep);
+
+  font-size: 30px;
+  font-weight: 400;
+
+  box-shadow:
+    0 14px 32px rgb(82 45 56 / 10%);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* 10 · LOBBY PLAY */
+.detail-kicker {
+  position: relative;
+  z-index: 1;
+
+  margin: 0 0 13px;
+
+  color: #9f6075;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 570;
+  line-height: 1.4;
+  letter-spacing: 0.13em;
+}
+
+/* 뮤지컬 소개판 등의 큰 제목 */
+.detail-title {
+  position: relative;
+  z-index: 1;
+
+  margin: 0;
+
+  color: var(--deep);
+
+  font-family: inherit;
+  font-size: 37px;
+  font-weight: 640;
+  line-height: 1.25;
+  letter-spacing: -0.018em;
+}
+
+/* 제목 아래 소개 */
+.detail-summary {
+  position: relative;
+  z-index: 1;
+
+  max-width: 340px;
+  margin: 22px auto 0;
+
+  color: rgb(82 45 56 / 78%);
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: -0.005em;
+}
+
+
+/* ==================================================
+   상세페이지 내용 영역
+================================================== */
+
+.detail-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 28px 22px 100px;
+
+  background: transparent;
+}
+
+/* 어떤 체험인가요 / 참여 방법 카드 */
+.detail-content > section {
+  margin: 0 0 16px;
+  padding: 25px 23px 27px;
+
+  border: 0;
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgb(255 255 255 / 69%),
+      rgb(255 250 246 / 41%)
+    );
+
+  box-shadow:
+    0 15px 36px rgb(82 45 56 / 8%);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* 어떤 체험인가요, 참여 방법 */
+.detail-content h3 {
+  margin: 0 0 15px;
+
+  color: var(--deep);
+
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 610;
+  line-height: 1.4;
+  letter-spacing: -0.012em;
+}
+
+/* 설명 본문 */
+.detail-description,
+.detail-content section p,
+.detail-content li {
+  color: rgb(82 45 56 / 78%);
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: -0.004em;
+}
+
+
+/* ==================================================
+   장소와 운영 시간
+================================================== */
+
+.detail-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px;
+
+  margin: 0 0 16px;
+}
+
+.detail-info div {
+  min-width: 0;
+  padding: 20px 19px;
+
+  border: 0;
+  border-radius: 20px;
+
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgb(255 255 255 / 48%),
+      transparent 38%
+    ),
+    linear-gradient(
+      145deg,
+      rgb(229 183 198 / 62%),
+      rgb(247 221 228 / 48%)
+    );
+
+  box-shadow:
+    0 12px 28px rgb(82 45 56 / 7%);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.detail-info small {
+  display: block;
+
+  margin: 0 0 7px;
+
+  color: #a26177;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 550;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+}
+
+.detail-info strong {
+  display: block;
+
+  color: var(--deep);
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+
+/* ==================================================
+   참여 방법 목록
+================================================== */
+
+.detail-steps {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  counter-reset: detail-step;
+}
+
+.detail-steps li {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+
+  margin: 0;
+  padding: 11px 0;
+
+  border-bottom: 1px solid rgb(82 45 56 / 8%);
+
+  counter-increment: detail-step;
+}
+
+.detail-steps li:last-child {
+  border-bottom: 0;
+}
+
+/* 단계 번호 */
+.detail-steps li::before {
+  display: grid;
+  place-items: center;
+
+  width: 28px;
+  height: 28px;
+  margin-top: 1px;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgb(224 166 186 / 65%),
+      rgb(246 214 223 / 58%)
+    );
+
+  color: var(--deep);
+
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+
+  content: counter(detail-step, decimal-leading-zero);
+}
+
+
+/* ==================================================
+   모바일 상세페이지
+================================================== */
+
+@media (max-width: 600px) {
+  .detail-hero {
+    min-height: 370px;
+    padding: 50px 22px 45px;
+  }
+
+  .detail-icon {
+    width: 68px;
+    height: 68px;
+
+    border-radius: 22px;
+
+    font-size: 28px;
+  }
+
+  .detail-title {
+    font-size: clamp(31px, 9vw, 37px);
+  }
+
+  .detail-summary {
+    max-width: 310px;
+
+    font-size: 14px;
+  }
+
+  .detail-content {
+    padding:
+      24px
+      16px
+      calc(95px + env(safe-area-inset-bottom));
+  }
+
+  .detail-content > section {
+    padding: 23px 20px 25px;
+
+    border-radius: 22px;
+  }
+
+  .detail-info div {
+    padding: 18px 16px;
+  }
+
+  .detail-content h3 {
+    font-size: 19px;
+  }
+
+  .detail-description,
+  .detail-content section p,
+  .detail-content li {
+    font-size: 14px;
+  }
+}
+
+/* ==================================================
+   로비플레이 선택창 리디자인
+================================================== */
+
+/* 선택창 뒤 배경 */
+.picker-backdrop {
+  background:
+    linear-gradient(
+      145deg,
+      rgb(79 55 63 / 30%),
+      rgb(110 77 88 / 22%)
+    ) !important;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* 선택창 본체 */
+.picker-panel {
+  overflow: hidden;
+
+  border: 0 !important;
+  border-radius: 28px;
+
+  background:
+    radial-gradient(
+      circle at 88% 8%,
+      rgb(255 255 255 / 48%),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      rgb(246 222 229 / 94%),
+      rgb(226 181 196 / 90%)
+    );
+
+  color: var(--deep);
+
+  box-shadow:
+    0 28px 70px rgb(55 31 39 / 23%);
+
+  backdrop-filter: blur(26px);
+  -webkit-backdrop-filter: blur(26px);
+}
+
+/* 선택창 머리말 */
+.picker-head {
+  padding: 24px 24px 17px;
+}
+
+.picker-head small {
+  margin-bottom: 7px;
+
+  color: #a75f77;
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 580;
+  letter-spacing: 0.17em;
+}
+
+/* 마음 나누기, 직접 만들기 */
+.picker-head h3 {
+  color: var(--deep);
+
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: 620;
+  line-height: 1.35;
+  letter-spacing: -0.012em;
+}
+
+/* 닫기 버튼 */
+.picker-head button {
+  width: 38px;
+  height: 38px;
+
+  border: 0;
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgb(255 255 255 / 64%),
+      rgb(255 255 255 / 26%)
+    );
+
+  color: var(--deep);
+
+  font-family: inherit;
+  font-size: 21px;
+  font-weight: 350;
+
+  box-shadow:
+    0 7px 18px rgb(82 45 56 / 8%);
+}
+
+/* 선택 항목 전체 */
+.picker-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding: 0 14px 15px;
+}
+
+/* 개별 항목 */
+.picker-list button {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) 18px;
+  gap: 11px;
+  align-items: center;
+
+  width: 100%;
+  padding: 15px 14px;
+
+  border: 0 !important;
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgb(255 255 255 / 58%),
+      rgb(255 250 246 / 28%)
+    );
+
+  color: var(--deep);
+
+  box-shadow:
+    0 8px 20px rgb(82 45 56 / 6%);
+
+  transition:
+    background 0.17s ease,
+    transform 0.17s ease;
+}
+
+/* 기존 구분선 제거 */
+.picker-list button:first-child,
+.picker-list button + button {
+  border-top: 0 !important;
+}
+
+/* 누를 때 */
+.picker-list button:active {
+  background:
+    linear-gradient(
+      145deg,
+      rgb(255 255 255 / 74%),
+      rgb(241 204 215 / 52%)
+    );
+
+  transform: scale(0.98);
+}
+
+/* 체크 표시 */
+.picker-check {
+  display: grid;
+  place-items: center;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgb(208 125 153 / 80%),
+      rgb(230 168 188 / 72%)
+    );
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  box-shadow:
+    0 6px 14px rgb(136 75 95 / 15%);
+}
+
+/* 항목 제목 */
+.picker-list b {
+  color: var(--deep);
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.006em;
+}
+
+/* 항목 설명 */
+.picker-list small {
+  margin-top: 4px;
+
+  color: rgb(82 45 56 / 64%);
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+
+/* 오른쪽 화살표 */
+.picker-list i {
+  color: rgb(82 45 56 / 52%);
+
+  font-family: inherit;
+  font-size: 23px;
+  font-weight: 300;
+}
+
+/* 작은 휴대폰 */
+@media (max-width: 370px) {
+  .picker-head {
+    padding: 21px 20px 14px;
+  }
+
+  .picker-list {
+    padding: 0 11px 12px;
+  }
+
+  .picker-list button {
+    padding: 14px 11px;
+  }
+
+  .picker-list b {
+    font-size: 14px;
+  }
+}

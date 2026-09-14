@@ -3319,3 +3319,171 @@ body {
     display: none !important;
   }
 }
+
+/* ==================================================
+   로비플레이 팝업 화면 중앙 고정
+================================================== */
+
+.play-picker {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 10000 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: 100% !important;
+  height: 100dvh !important;
+  min-height: 100dvh !important;
+
+  margin: 0 !important;
+  padding:
+    max(22px, env(safe-area-inset-top))
+    22px
+    max(22px, env(safe-area-inset-bottom)) !important;
+
+  transform: none !important;
+}
+
+.picker-backdrop {
+  position: absolute !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* 선택창 크기 */
+.picker-panel {
+  position: relative !important;
+  z-index: 1;
+
+  width: min(100%, 430px) !important;
+  max-height: calc(
+    100dvh
+    - env(safe-area-inset-top)
+    - env(safe-area-inset-bottom)
+    - 44px
+  );
+
+  margin: 0 !important;
+  overflow-y: auto;
+
+  transform: translateY(12px) scale(0.98) !important;
+}
+
+.play-picker.open .picker-panel {
+  transform: translateY(0) scale(1) !important;
+}
+
+/* 팝업이 열리면 하단 메뉴 숨김 */
+body.picker-open .bottom-nav {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+
+  transform: translateY(20px) !important;
+}
+
+/* 팝업이 닫히면 하단 메뉴 복구 */
+.bottom-nav {
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* ==================================================
+   모바일 시간표 너비 확대
+================================================== */
+
+@media (max-width: 600px) {
+  #schedule {
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+  }
+
+  #schedule .timeline {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 40px 0 0 !important;
+    padding: 34px 18px 18px !important;
+
+    transform: none !important;
+
+    border-radius: 26px;
+  }
+
+  #schedule .timeline > div {
+    grid-template-columns:
+      62px
+      22px
+      minmax(0, 1fr) !important;
+
+    gap: 9px !important;
+
+    min-height: 126px;
+  }
+
+  #schedule .timeline time {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  #schedule .timeline strong {
+    font-size: 19px;
+    line-height: 1.35;
+
+    word-break: keep-all;
+  }
+
+  #schedule .timeline small {
+    margin-top: 7px;
+
+    font-size: 13px;
+    line-height: 1.55;
+
+    word-break: keep-all;
+  }
+}
+
+
+/* ==================================================
+   상단 바 티켓 구멍 제거
+================================================== */
+
+.topbar::before,
+.topbar::after,
+.ticket-button::before,
+.ticket-button::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* 구멍을 없앤 뒤 깔끔한 글래스 바로 정리 */
+.topbar {
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgb(225 166 186 / 78%),
+      rgb(244 204 216 / 68%)
+    );
+
+  box-shadow:
+    0 12px 30px rgb(82 45 56 / 12%);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* 가운데 절취선은 은은하게 유지 */
+.ticket-button {
+  border-left:
+    1px dashed rgb(82 45 56 / 20%) !important;
+}
