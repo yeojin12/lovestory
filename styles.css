@@ -3487,3 +3487,480 @@ body.picker-open .bottom-nav {
   border-left:
     1px dashed rgb(82 45 56 / 20%) !important;
 }
+
+/* ==================================================
+   상단 바 최종 디자인
+================================================== */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 66px;
+  padding: 8px;
+
+  overflow: hidden;
+
+  border: 0 !important;
+  border-radius: 21px;
+
+  background:
+    radial-gradient(
+      circle at 14% 10%,
+      rgb(255 255 255 / 42%),
+      transparent 34%
+    ),
+    linear-gradient(
+      110deg,
+      rgb(224 163 184 / 82%),
+      rgb(244 205 217 / 72%)
+    );
+
+  box-shadow:
+    0 14px 34px rgb(82 45 56 / 13%);
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+/* 기존 티켓 구멍과 점선 완전히 제거 */
+.topbar::before,
+.topbar::after,
+.ticket-button::before,
+.ticket-button::after {
+  display: none !important;
+
+  content: none !important;
+}
+
+/* 왼쪽 여우사이 */
+.wordmark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 0 15px;
+
+  color: var(--deep);
+
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+}
+
+/* 작은 로고 점 */
+.wordmark::before {
+  width: 11px;
+  height: 11px;
+  flex: 0 0 11px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      #f9dce5,
+      #bd738a 65%
+    );
+
+  box-shadow:
+    0 0 0 5px rgb(255 255 255 / 24%);
+
+  content: "";
+}
+
+/* 오른쪽 나의 티켓 */
+.ticket-button {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  align-self: stretch;
+
+  min-width: 138px;
+  padding: 0 40px 0 18px;
+
+  border: 0 !important;
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgb(255 255 255 / 47%),
+      rgb(255 255 255 / 19%)
+    );
+
+  color: var(--deep);
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 620;
+  letter-spacing: 0.015em;
+}
+
+/* 티켓 화살표 */
+.ticket-button::after {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+
+  display: block !important;
+
+  color: rgb(82 45 56 / 68%);
+
+  font-size: 17px;
+  font-weight: 350;
+
+  content: "↗" !important;
+  transform: translateY(-50%);
+}
+
+
+/* ==================================================
+   메인 제목 감성적인 글꼴
+================================================== */
+
+/* 여기 우리 사랑 이야기 */
+.hero h1 {
+  font-family:
+    "Gowun Batang",
+    "Nanum Myeongjo",
+    serif !important;
+
+  font-size: clamp(43px, 11vw, 61px);
+  font-weight: 700;
+  line-height: 1.22;
+  letter-spacing: -0.035em;
+
+  text-shadow:
+    0 4px 18px rgb(82 45 56 / 6%);
+}
+
+/* 분홍색 글자 */
+.hero h1 .pink-letter {
+  color: #bd738a;
+  font-weight: 700;
+}
+
+/* 영문 문구도 조금 가볍게 */
+.hero .eyebrow {
+  font-weight: 560;
+  letter-spacing: 0.23em;
+}
+
+
+/* ==================================================
+   신청 버튼 구분감 강화
+================================================== */
+
+.apply-button {
+  border:
+    1px solid rgb(164 91 115 / 30%) !important;
+
+  background:
+    radial-gradient(
+      circle at 88% 18%,
+      rgb(255 255 255 / 55%),
+      transparent 31%
+    ),
+    linear-gradient(
+      110deg,
+      rgb(217 148 172 / 87%),
+      rgb(243 196 211 / 75%)
+    );
+
+  box-shadow:
+    0 17px 40px rgb(125 67 87 / 18%),
+    inset 0 1px 0 rgb(255 255 255 / 68%),
+    inset 0 -1px 0 rgb(136 75 95 / 9%);
+}
+
+.apply-copy strong {
+  font-size: 20px;
+  font-weight: 630;
+  letter-spacing: 0.015em;
+}
+
+.apply-arrow {
+  border-left:
+    1px dashed rgb(82 45 56 / 26%) !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgb(255 255 255 / 47%),
+      rgb(255 255 255 / 17%)
+    );
+}
+
+
+/* ==================================================
+   뮤지컬 소개 카드 비율 수정
+================================================== */
+
+.feature-card {
+  display: grid;
+  grid-template-columns: 41% minmax(0, 59%);
+  align-items: stretch;
+
+  min-height: 0;
+
+  border-radius: 25px;
+}
+
+/* 포스터 영역 */
+.placeholder-art {
+  width: 100%;
+  min-height: 0;
+  padding: 0;
+
+  overflow: hidden;
+
+  border-radius: 25px 0 0 25px;
+
+  background: #dca8ba;
+}
+
+/* 포스터 이미지가 칸을 꽉 채우도록 */
+.placeholder-art img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+
+  border-radius: 25px 0 0 25px;
+
+  object-fit: cover !important;
+  object-position: center center;
+}
+
+/* 오른쪽 글 영역 높이 축소 */
+.feature-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-width: 0;
+  padding: 30px 25px;
+}
+
+.feature-copy .tag {
+  font-size: 10px;
+  font-weight: 560;
+  letter-spacing: 0.15em;
+}
+
+.feature-copy h3 {
+  margin: 13px 0 17px;
+
+  font-size: 24px;
+  font-weight: 620;
+  line-height: 1.32;
+  letter-spacing: -0.018em;
+}
+
+.feature-copy > p {
+  margin: 0;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.72;
+  letter-spacing: -0.008em;
+}
+
+.feature-copy .text-link {
+  margin-top: 22px;
+  padding: 0;
+
+  font-size: 13px;
+  font-weight: 570;
+}
+
+/* 모바일에서 카드가 지나치게 높아지지 않도록 */
+@media (max-width: 600px) {
+  .feature-card {
+    grid-template-columns: 42% minmax(0, 58%);
+  }
+
+  .feature-copy {
+    padding: 25px 18px;
+  }
+
+  .feature-copy h3 {
+    margin: 10px 0 14px;
+
+    font-size: 20px;
+  }
+
+  .feature-copy > p {
+    /*display: -webkit-box;
+    overflow: hidden;*/
+
+    font-size: 12px;
+    line-height: 1.68;
+
+    /*-webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;*/
+  }
+
+  .feature-copy .text-link {
+    margin-top: 17px;
+
+    font-size: 12px;
+  }
+}
+
+
+/* ==================================================
+   CAST 영역
+================================================== */
+
+.subheading {
+  margin: 43px 0 22px;
+
+  color: var(--rose);
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 580;
+  letter-spacing: 0.21em;
+}
+
+/* 배우 목록 */
+.profile-row {
+  gap: 13px;
+
+  padding: 4px 4px 14px;
+}
+
+/* 배우 카드 */
+.profile {
+  min-width: 112px;
+
+  padding: 0 0 10px;
+
+  border-radius: 60px 60px 18px 18px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgb(255 255 255 / 32%),
+      rgb(239 204 214 / 20%)
+    );
+
+  box-shadow:
+    0 10px 25px rgb(82 45 56 / 5%);
+}
+
+/* 배우 이미지 박스 */
+.profile .profile-image {
+  width: 100%;
+  height: 142px;
+
+  border: 0 !important;
+  border-radius: 58px 58px 17px 17px;
+
+  background:
+    radial-gradient(
+      circle at 68% 22%,
+      rgb(255 255 255 / 58%),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      rgb(235 203 208 / 86%),
+      rgb(247 225 229 / 68%)
+    );
+
+  box-shadow:
+    0 13px 28px rgb(82 45 56 / 9%);
+}
+
+/* 배우 이모지 */
+.profile .profile-image span {
+  filter:
+    drop-shadow(0 6px 8px rgb(82 45 56 / 12%));
+
+  transform: scale(1.05);
+}
+
+/* 배우 이름 */
+.profile > strong {
+  margin: 13px 12px 0;
+
+  font-size: 15px;
+  font-weight: 610;
+  letter-spacing: -0.01em;
+}
+
+/* 배우 설명 */
+.profile > span {
+  margin: 4px 12px 0;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+
+/* ==================================================
+   시간표 중앙 배치
+================================================== */
+
+#schedule .section-heading {
+  width: min(100%, 520px);
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+#schedule .timeline {
+  width: min(100%, 520px) !important;
+  max-width: 520px !important;
+
+  margin:
+    40px
+    auto
+    0 !important;
+
+  transform: none !important;
+}
+
+@media (max-width: 600px) {
+  #schedule {
+    padding-right: 18px !important;
+    padding-left: 18px !important;
+  }
+
+  #schedule .section-heading {
+    width: calc(100% - 8px);
+  }
+
+  #schedule .timeline {
+    width: calc(100% - 8px) !important;
+    max-width: none !important;
+
+    margin:
+      38px
+      auto
+      0 !important;
+
+    padding:
+      32px
+      17px
+      20px !important;
+  }
+
+  #schedule .timeline > div {
+    grid-template-columns:
+      58px
+      21px
+      minmax(0, 1fr) !important;
+
+    gap: 9px !important;
+  }
+}
