@@ -4143,3 +4143,29 @@ main {
   color: var(--rose) !important;
   font-weight: 700 !important;
 }
+
+/* 티켓 팝업 장소 정보 우측 정렬 */
+#ticket-dialog .ticket-stub > div:last-child {
+  margin-left: auto;
+  text-align: right;
+}
+
+#ticket-dialog .ticket-stub > div:last-child strong {
+  white-space: nowrap;
+}
+
+/* 티켓 날짜와 장소를 양쪽 끝에서 중앙 방향으로 이동 */
+#ticket-dialog .ticket-stub {
+  padding: 14px 14px !important;
+}
+
+/* 날짜는 왼쪽 정렬 유지 */
+#ticket-dialog .ticket-stub > div:first-child {
+  text-align: left;
+}
+
+/* 장소는 오른쪽 정렬 유지 */
+#ticket-dialog .ticket-stub > div:last-child {
+  margin-left: auto;
+  text-align: right;
+}
