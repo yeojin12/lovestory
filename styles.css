@@ -4083,3 +4083,63 @@ body.picker-open .bottom-nav {
     width: calc(100% - 20px);
   }
 }
+
+/* 상단바를 화면 위쪽에 독립적으로 띄우기 */
+.topbar {
+  width: min(calc(100% - 40px), 560px) !important;
+  height: 64px;
+
+  /* 위아래 모두 간격 확보 */
+  margin: 20px auto 18px !important;
+
+  border-radius: 20px !important;
+
+  box-shadow:
+    0 12px 30px rgb(116 67 83 / 13%),
+    0 3px 10px rgb(116 67 83 / 7%) !important;
+}
+
+/* 상단바와 포스터가 다시 붙지 않도록 설정 */
+main {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    width: calc(100% - 32px) !important;
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+  }
+}
+
+/* 메인 제목을 포스터와 비슷한 굵은 전시용 글꼴로 변경 */
+/* 메인 제목 글꼴 원래대로 복구 */
+.hero h1 {
+  font-family: "Gowun Batang", serif !important;
+  font-size: clamp(48px, 11vw, 64px) !important;
+  font-weight: 700 !important;
+  line-height: 1.22 !important;
+  letter-spacing: -0.035em !important;
+  word-spacing: normal !important;
+
+  text-shadow: none !important;
+}
+
+.hero h1 .pink-letter {
+  color: var(--rose) !important;
+}
+
+/* 나머지 글자는 보통 굵기 */
+.hero h1 {
+  font-family: "Gowun Batang", serif !important;
+  font-size: clamp(48px, 11vw, 64px) !important;
+  font-weight: 400 !important;
+  line-height: 1.22 !important;
+  letter-spacing: -0.035em !important;
+}
+
+/* 여·우·사·이만 굵게 */
+.hero h1 .pink-letter {
+  color: var(--rose) !important;
+  font-weight: 700 !important;
+}
