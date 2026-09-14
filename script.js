@@ -332,6 +332,27 @@ const plays = {
   }
 };
 
+const playGroups = {
+  photo: {
+    title: '사진으로 남기기',
+    items: ['fourcut', 'mirror']
+  },
+
+  heart: {
+    title: '마음 나누기',
+    items: ['scratch', 'guestbook', 'pharmacy']
+  },
+
+  make: {
+    title: '직접 만들기',
+    items: ['personalcolor', 'shrinkles']
+  },
+
+  game: {
+    title: '함께 놀기',
+    items: ['jenga', 'draw']
+  }
+};
 
 /* ==================================================
    로비플레이 상세 화면 열기
@@ -406,7 +427,89 @@ function closePlayDetail(updateAddress = true) {
     history.replaceState(null, "", "#play");
   }
 }
+const picker = document.querySelector('#play-picker');
+const pickerTitle = picker.querySelector('#play-picker-title');
+const pickerList = picker.querySelector('.picker-list');
 
+let pickerReturnTarget = null;
+
+function openPicker(groupId, button) {
+  const group = playGroups[groupId];
+
+  if (!group) return;
+
+  pickerReturnTarget = button;
+  pickerTitle.textContent = group.title;
+
+  pickerList.innerHTML = group.items
+    .map((id) => {
+      const item = plays[id];
+
+      return `
+        <button type="button" data-picker-play="${id}">
+          <span class="picker-check">✓</span>
+
+          <span>
+            <b>${item.number} · ${item.title}</b>
+            <small>${item.summary}</small>
+          </span>
+
+          <i>›</i>
+        </button>
+      `;
+    })
+    .join('');
+
+  /* 새로 만들어진 개별 버튼에 상세페이지 기능 연결 */
+  pickerList
+    .querySelectorAll('[data-picker-play]')
+    .forEach((playButton) => {
+      playButton.addEventListener('click', () => {
+        const playId = playButton.dataset.pickerPlay;
+
+        closePicker();
+
+        /* 선택창이 닫힌 직후 기존 상세페이지 열기 */
+        requestAnimationFrame(() => {
+          openPlayDetail(playId);
+        });
+      });
+    });
+
+  picker.classList.add('open');
+  picker.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('picker-open');
+}
+
+function closePicker() {
+  picker.classList.remove('open');
+  picker.setAttribute('aria-hidden', 'true');
+
+  document.body.classList.remove('picker-open');
+}
+
+document
+  .querySelectorAll('[data-play-group]')
+  .forEach((button) => {
+    button.addEventListener('click', () => {
+      openPicker(button.dataset.playGroup, button);
+    });
+  });
+
+picker
+  .querySelectorAll('[data-close-picker]')
+  .forEach((button) => {
+    button.addEventListener('click', closePicker);
+  });
+
+document.addEventListener('keydown', (event) => {
+  if (
+    event.key === 'Escape' &&
+    picker.classList.contains('open')
+  ) {
+    closePicker();
+  }
+});
 
 /* 로비플레이 카드에 클릭 기능 연결 */
 document.querySelectorAll("[data-play]").forEach((card) => {

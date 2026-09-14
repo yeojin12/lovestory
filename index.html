@@ -18,8 +18,8 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="./styles.css?v=28">
-  <link rel="stylesheet" href="./detail.css?v=6">
+  <link rel="stylesheet" href="./styles.css?v=31">
+  <link rel="stylesheet" href="./detail.css?v=7">
 </head>
 
 <body>
@@ -234,86 +234,97 @@
         공연 전후, 마음 가는 곳부터 천천히 둘러보세요.
       </p>
 
-      <div class="play-grid">
-        <button class="play-card" type="button" data-play="fourcut">
-          <b>01</b>
-          <span>▣</span>
-          <h3>인생네컷</h3>
-          <i>자세히 보기 →</i>
+      <div class="play-control" aria-label="로비플레이 카테고리">
+
+        <button class="control-wide" data-play-group="photo">
+          <span class="control-icon">⌁</span>
+          <span>
+            <strong>사진으로 남기기</strong>
+            <small>인생네컷 · 포토존</small>
+          </span>
         </button>
 
-        <button class="play-card" type="button" data-play="mirror">
-          <b>02</b>
-          <span>◇</span>
-          <h3>포토존</h3>
-          <i>자세히 보기 →</i>
-        </button>
+        <div class="control-grid">
 
-        <button class="play-card" type="button" data-play="scratch">
-          <b>03</b>
-          <span>✦</span>
-          <h3>스크래치카드</h3>
-          <i>자세히 보기 →</i>
-        </button>
+          <button class="control-tile" data-play-group="heart">
+            <span class="control-icon">♡</span>
+            <span>
+              <strong>마음 나누기</strong>
+              <small>3가지 플레이</small>
+            </span>
+          </button>
 
-        <button class="play-card" type="button" data-play="guestbook">
-          <b>04</b>
-          <span>✎</span>
-          <h3>방명록</h3>
-          <i>자세히 보기 →</i>
-        </button>
+          <button class="control-tile" data-play-group="make">
+            <span class="control-icon">✦</span>
+            <span>
+              <strong>직접 만들기</strong>
+              <small>2가지 플레이</small>
+            </span>
+          </button>
 
-        <button
-          class="play-card"
-          type="button"
-          data-play="personalcolor"
-        >
-          <b>05</b>
-          <span>◐</span>
-          <h3>퍼스널컬러</h3>
-          <i>자세히 보기 →</i>
-        </button>
+          <button class="control-tile" data-play-group="game">
+            <span class="control-icon">▦</span>
+            <span>
+              <strong>함께 놀기</strong>
+              <small>2가지 플레이</small>
+            </span>
+          </button>
 
-        <button class="play-card" type="button" data-play="pharmacy">
-          <b>06</b>
-          <span>＋</span>
-          <h3>마음의 약국</h3>
-          <i>자세히 보기 →</i>
-        </button>
+          <button class="control-tile" data-play="musicalboard">
+            <span class="control-icon">♪</span>
+            <span>
+              <strong>뮤지컬 소개</strong>
+              <small>이야기 미리보기</small>
+            </span>
+          </button>
 
-        <button class="play-card" type="button" data-play="shrinkles">
-          <b>07</b>
-          <span>♧</span>
-          <h3>슈링클스</h3>
-          <i>자세히 보기 →</i>
-        </button>
+        </div>
 
-        <button class="play-card" type="button" data-play="jenga">
-          <b>08</b>
-          <span>▥</span>
-          <h3>대형 젠가</h3>
-          <i>자세히 보기 →</i>
-        </button>
+        <p class="control-hint">
+          항목을 누르면 로비플레이를 고를 수 있어요.
+        </p>
 
-        <button class="play-card" type="button" data-play="draw">
-          <b>09</b>
-          <span>?</span>
-          <h3>대왕 종이판 뽑기</h3>
-          <i>자세히 보기 →</i>
-        </button>
-
-        <button
-          class="play-card"
-          type="button"
-          data-play="musicalboard"
-        >
-          <b>10</b>
-          <span>♡</span>
-          <h3>뮤지컬 소개판</h3>
-          <i>자세히 보기 →</i>
-        </button>
       </div>
+        
     </section>
+
+    <!-- 로비플레이 선택창 -->
+    <div
+      class="play-picker"
+      id="play-picker"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-labelledby="play-picker-title"
+    >
+      <button
+        class="picker-backdrop"
+        type="button"
+        data-close-picker
+        aria-label="선택창 닫기"
+      ></button>
+
+      <div class="picker-panel">
+
+        <div class="picker-head">
+          <div>
+            <small>LOBBY PLAY</small>
+            <h3 id="play-picker-title">사진으로 남기기</h3>
+          </div>
+
+          <button
+            type="button"
+            data-close-picker
+            aria-label="선택창 닫기"
+          >
+            ×
+          </button>
+        </div>
+
+        <div class="picker-list"></div>
+
+      </div>
+    </div>
 
     <!-- 시간표 -->
     <section class="section" id="schedule">
