@@ -11,6 +11,10 @@
   <title>여우사이 | 가이드북</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"
+  >
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
@@ -18,12 +22,11 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="./styles.css?v=31">
-  <link rel="stylesheet" href="./detail.css?v=7">
+  <link rel="stylesheet" href="./styles.css?v=37">
+  <link rel="stylesheet" href="./detail.css?v=8">
 </head>
 
 <body>
-  <!-- 상단 메뉴 -->
   <header class="topbar">
     <a class="wordmark" href="#home" aria-label="처음으로 이동">
       여우사이
@@ -35,12 +38,11 @@
   </header>
 
   <main>
-    <!-- 메인 화면 -->
     <section class="hero" id="home">
       <div class="poster-frame">
         <img
-            src="./assets/main-poster.png?v=3"
-            alt="여우사이 메인 포스터"
+          src="./assets/main-poster.png?v=3"
+          alt="여우사이 메인 포스터"
         >
       </div>
 
@@ -59,25 +61,21 @@
         <span>삼덕교회 교육관</span>
       </div>
 
-      <!-- 여우사이 신청 버튼 -->
-        <a
-            class="apply-button"
-            href="https://smore.im/form/OfBCRVwT8M"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="여우사이 참가 신청 페이지 열기"
-        >
-            <span class="apply-copy">
-                <strong>여우사이 신청하기</strong>
-            </span>
+      <a
+        class="apply-button"
+        href="https://smore.im/form/OfBCRVwT8M"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="여우사이 참가 신청 페이지 열기"
+      >
+        <span class="apply-copy">
+          <strong>여우사이 신청하기</strong>
+        </span>
 
-            <span class="apply-arrow" aria-hidden="true">
-                ↗
-            </span>
-        </a>
+        <span class="apply-arrow" aria-hidden="true">↗</span>
+      </a>
     </section>
 
-    <!-- 뮤지컬 -->
     <section class="section" id="musical">
       <div class="section-heading">
         <span>01</span>
@@ -90,10 +88,10 @@
 
       <article class="feature-card">
         <div class="placeholder-art">
-          <span>
-            뮤지컬<br>
-            포스터
-          </span>
+          <img
+            src="./assets/musical-poster.png?v=1"
+            alt="뮤지컬 찾아 주셔서 고맙습니다 포스터"
+          >
         </div>
 
         <div class="feature-copy">
@@ -119,40 +117,35 @@
         </div>
 
         <div class="expandable" id="synopsis">
-            <p class="synopsis-lead">
-                “오늘도 ‘안심행’ 열차 들어옵니다.
-                손에 든 거 꽉 잡으세요!”
-            </p>
+          <p class="synopsis-lead">
+            “오늘도 ‘안심행’ 열차 들어옵니다.
+            손에 든 거 꽉 잡으세요!”
+          </p>
 
-            <p>
-                남들보다 한 발짝이라도 먼저 가기 위해 5G 속도로 달리는 세상.
-                내 존재의 이유이자 생명줄 같았던 물건들을 지하철 환승통로에서
-                잃어버린 세 청년이 있습니다.
-            </p>
+          <p>
+            남들보다 한 발짝이라도 먼저 가기 위해 5G 속도로 달리는 세상.
+            내 존재의 이유이자 생명줄 같았던 물건들을 지하철 환승통로에서
+            잃어버린 세 청년이 있습니다.
+          </p>
 
-            <p>
-                멘붕에 빠진 이들 앞에 기적처럼 나타난 낡은 문 하나.
-                잃어버린 물건을 당장 내놓으라며 아우성치는 이들에게
-                유실물 센터의 미스터리한 관리인은 따뜻한 찻잔을 건네며
-                예상치 못한 이야기를 시작합니다.
-            </p>
+          <p>
+            멘붕에 빠진 이들 앞에 기적처럼 나타난 낡은 문 하나.
+            잃어버린 물건을 당장 내놓으라며 아우성치는 이들에게
+            유실물 센터의 미스터리한 관리인은 따뜻한 찻잔을 건네며
+            예상치 못한 이야기를 시작합니다.
+          </p>
 
-            <p>
-                과연 이들은 잃어버린 물건을 찾고 무사히
-                ‘안심’에 도착할 수 있을까요?
-            </p>
+          <p>
+            과연 이들은 잃어버린 물건을 찾고 무사히
+            ‘안심’에 도착할 수 있을까요?
+          </p>
         </div>
       </article>
 
-      <!-- 등장인물 -->
       <h3 class="subheading">함께 만든 사람들</h3>
 
       <div class="profile-row">
-        <button
-          class="profile"
-          type="button"
-          data-character="haru"
-        >
+        <button class="profile" type="button" data-character="haru">
           <div class="profile-image">
             <span>📱</span>
           </div>
@@ -161,11 +154,7 @@
           <span>20세 · 신입생</span>
         </button>
 
-        <button
-          class="profile"
-          type="button"
-          data-character="jeongseok"
-        >
+        <button class="profile" type="button" data-character="jeongseok">
           <div class="profile-image">
             <span>📘</span>
           </div>
@@ -174,11 +163,7 @@
           <span>복학생</span>
         </button>
 
-        <button
-          class="profile"
-          type="button"
-          data-character="seoyeon"
-        >
+        <button class="profile" type="button" data-character="seoyeon">
           <div class="profile-image">
             <span>📄</span>
           </div>
@@ -187,11 +172,7 @@
           <span>4학년 · 취준생</span>
         </button>
 
-        <button
-          class="profile"
-          type="button"
-          data-character="station"
-        >
+        <button class="profile" type="button" data-character="station">
           <div class="profile-image">
             <span>🚊</span>
           </div>
@@ -200,11 +181,7 @@
           <span>안심행 안내자</span>
         </button>
 
-        <button
-          class="profile"
-          type="button"
-          data-character="manager"
-        >
+        <button class="profile" type="button" data-character="manager">
           <div class="profile-image">
             <span>☕</span>
           </div>
@@ -215,11 +192,10 @@
       </div>
 
       <p class="profile-guide">
-        인물을 누르면 자세한 소개를 볼 수 있어요.
+        *인물을 누르면 자세한 소개를 볼 수 있어요.
       </p>
     </section>
 
-    <!-- 로비플레이 -->
     <section class="section tinted" id="play">
       <div class="section-heading">
         <span>02</span>
@@ -235,9 +211,13 @@
       </p>
 
       <div class="play-control" aria-label="로비플레이 카테고리">
-
-        <button class="control-wide" data-play-group="photo">
+        <button
+          class="control-wide"
+          type="button"
+          data-play-group="photo"
+        >
           <span class="control-icon">⌁</span>
+
           <span>
             <strong>사진으로 남기기</strong>
             <small>인생네컷 · 포토존</small>
@@ -245,50 +225,65 @@
         </button>
 
         <div class="control-grid">
-
-          <button class="control-tile" data-play-group="heart">
+          <button
+            class="control-tile"
+            type="button"
+            data-play-group="heart"
+          >
             <span class="control-icon">♡</span>
+
             <span>
               <strong>마음 나누기</strong>
               <small>3가지 플레이</small>
             </span>
           </button>
 
-          <button class="control-tile" data-play-group="make">
+          <button
+            class="control-tile"
+            type="button"
+            data-play-group="make"
+          >
             <span class="control-icon">✦</span>
+
             <span>
               <strong>직접 만들기</strong>
               <small>2가지 플레이</small>
             </span>
           </button>
 
-          <button class="control-tile" data-play-group="game">
+          <button
+            class="control-tile"
+            type="button"
+            data-play-group="game"
+          >
             <span class="control-icon">▦</span>
+
             <span>
               <strong>함께 놀기</strong>
               <small>2가지 플레이</small>
             </span>
           </button>
 
-          <button class="control-tile" data-play="musicalboard">
+          <button
+            class="control-tile"
+            type="button"
+            data-play="musicalboard"
+          >
             <span class="control-icon">♪</span>
+
             <span>
               <strong>뮤지컬 소개</strong>
               <small>이야기 미리보기</small>
             </span>
           </button>
-
         </div>
 
         <p class="control-hint">
-          항목을 누르면 로비플레이를 고를 수 있어요.
+          *항목을 누르면 자세한 로비플레이 소개를 볼 수 있어요.
         </p>
-
       </div>
-        
     </section>
 
-    <!-- 로비플레이 선택창 -->
     <div
       class="play-picker"
       id="play-picker"
@@ -305,7 +300,6 @@
       ></button>
 
       <div class="picker-panel">
-
         <div class="picker-head">
           <div>
             <small>LOBBY PLAY</small>
@@ -322,11 +316,9 @@
         </div>
 
         <div class="picker-list"></div>
-
       </div>
     </div>
 
-    <!-- 시간표 -->
     <section class="section" id="schedule">
       <div class="section-heading">
         <span>03</span>
@@ -339,17 +331,7 @@
 
       <div class="timeline">
         <div>
-          <time>00:00</time>
-          <span></span>
-
-          <p>
-            <strong>행사 시작</strong>
-            <small>시간 추후 안내</small>
-          </p>
-        </div>
-
-        <div>
-          <time>00:00</time>
+          <time>17:00</time>
           <span></span>
 
           <p>
@@ -358,29 +340,38 @@
           </p>
         </div>
 
-        <div class="active">
-          <time>00:00</time>
+        <div>
+          <time>18:30</time>
           <span></span>
 
           <p>
-            <strong>뮤지컬 공연</strong>
+            <strong>뮤지컬 입장</strong>
             <small>공연 전에 입장해주세요</small>
           </p>
         </div>
 
+        <div class="active">
+          <time>19:00</time>
+          <span></span>
+
+          <p>
+            <strong>뮤지컬 공연</strong>
+            <small>「찾아주셔서 고맙습니다」</small>
+          </p>
+        </div>
+
         <div>
-          <time>00:00</time>
+          <time>20:30</time>
           <span></span>
 
           <p>
             <strong>행사 마무리</strong>
-            <small>시간 추후 안내</small>
+            <small>퇴장/패어웰</small>
           </p>
         </div>
       </div>
     </section>
 
-    <!-- 공간 안내 -->
     <section class="section tinted" id="map">
       <div class="section-heading">
         <span>04</span>
@@ -393,21 +384,20 @@
 
       <div class="map-placeholder">
         <span>
-          배치도 이미지가<br>
-          들어갈 자리
+          배치도 준비중<br>
+          
         </span>
       </div>
 
       <div class="notice-card">
-        <strong>잠깐, 확인해주세요</strong>
+        <strong> 잠깐, 확인해주세요</strong>
 
         <p>
-          입장과 행사 이용에 필요한 안내사항을 정리합니다.
+           입장과 행사 이용에 필요한 안내사항을 정리합니다.
         </p>
       </div>
     </section>
 
-    <!-- 팔로우 이벤트 -->
     <section class="section event-section" id="event">
       <div class="section-heading">
         <span>05</span>
@@ -422,56 +412,54 @@
         <span class="seal">♡</span>
 
         <p>
-          공식 계정을 팔로우하고<br>
+          @ccc_lovefestival을 팔로우하고<br>
           현장 이벤트에 참여해보세요.
         </p>
 
         <button type="button">
-          이벤트 자세히 보기
+          이벤트 준비중
         </button>
       </div>
     </section>
   </main>
 
-  <!-- 하단 고정 메뉴 -->
-<nav class="bottom-nav" aria-label="주요 메뉴">
-  <a href="#home">
-    <span>
-      <i class="nav-glyph nav-home" aria-hidden="true">⌂</i>
-    </span>
-    홈
-  </a>
+  <nav class="bottom-nav" aria-label="주요 메뉴">
+    <a href="#home">
+      <span>
+        <i class="nav-glyph nav-home" aria-hidden="true">⌂</i>
+      </span>
+      홈
+    </a>
 
-  <a href="#musical">
-    <span>
-      <i class="nav-glyph" aria-hidden="true">♪</i>
-    </span>
-    뮤지컬
-  </a>
+    <a href="#musical">
+      <span>
+        <i class="nav-glyph" aria-hidden="true">♪</i>
+      </span>
+      뮤지컬
+    </a>
 
-  <a href="#play">
-    <span>
-      <i class="nav-glyph" aria-hidden="true">✦</i>
-    </span>
-    로비
-  </a>
+    <a href="#play">
+      <span>
+        <i class="nav-glyph" aria-hidden="true">✦</i>
+      </span>
+      로비
+    </a>
 
-  <a href="#schedule">
-    <span>
-      <i class="nav-glyph" aria-hidden="true">◷</i>
-    </span>
-    시간표
-  </a>
+    <a href="#schedule">
+      <span>
+        <i class="nav-glyph" aria-hidden="true">◷</i>
+      </span>
+      시간표
+    </a>
 
-  <a href="#map">
-    <span>
-      <i class="nav-glyph" aria-hidden="true">⌖</i>
-    </span>
-    안내
-  </a>
-</nav>
+    <a href="#map">
+      <span>
+        <i class="nav-glyph" aria-hidden="true">⌖</i>
+      </span>
+      안내
+    </a>
+  </nav>
 
-  <!-- 로비플레이 상세 화면 -->
   <section
     class="play-detail"
     id="play-detail"
@@ -505,7 +493,6 @@
       </p>
 
       <h2 class="detail-title">인생네컷</h2>
-
       <p class="detail-summary"></p>
     </div>
 
@@ -534,66 +521,61 @@
     </div>
   </section>
 
-<!-- 등장인물 상세 팝업 -->
-<dialog id="character-dialog">
-  <button
-    class="close character-close"
-    type="button"
-    aria-label="닫기"
-  >
-    ×
-  </button>
+  <dialog id="character-dialog">
+    <button
+      class="close character-close"
+      type="button"
+      aria-label="닫기"
+    >
+      ×
+    </button>
 
-  <!-- 인물 상단 정보 -->
-  <header class="character-header">
-    <div class="character-symbol">📱</div>
+    <header class="character-header">
+      <div class="character-symbol">📱</div>
 
-    <div>
-      <p class="character-type">분실자 1</p>
-      <h2 class="character-name">심하루</h2>
-      <p class="character-meta">20세 · 신입생</p>
+      <div>
+        <p class="character-type">분실자 1</p>
+        <h2 class="character-name">심하루</h2>
+        <p class="character-meta">20세 · 신입생</p>
+      </div>
+    </header>
+
+    <div class="character-details">
+      <section class="character-item character-lost-card">
+        <strong>
+          <span>LOST ITEM</span>
+          분실물
+        </strong>
+
+        <p class="character-lost"></p>
+      </section>
+
+      <section class="character-item character-quote-card">
+        <strong>
+          <span>LINE</span>
+          주요 대사
+        </strong>
+
+        <p class="character-quote"></p>
+      </section>
+
+      <section class="character-item character-description-card">
+        <strong>
+          <span>PROFILE</span>
+          인물 소개
+        </strong>
+
+        <p class="character-description"></p>
+      </section>
     </div>
-  </header>
+  </dialog>
 
-  <!-- 인물 세부 정보 -->
-  <div class="character-details">
-    <section class="character-item character-lost-card">
-      <strong>
-        <span>LOST ITEM</span>
-        분실물
-      </strong>
-
-      <p class="character-lost"></p>
-    </section>
-
-    <section class="character-item character-quote-card">
-      <strong>
-        <span>LINE</span>
-        주요 대사
-      </strong>
-
-      <p class="character-quote"></p>
-    </section>
-
-    <section class="character-item character-description-card">
-      <strong>
-        <span>PROFILE</span>
-        인물 소개
-      </strong>
-
-      <p class="character-description"></p>
-    </section>
-  </div>
-</dialog>
-
-  <!-- 티켓 팝업 -->
   <dialog id="ticket-dialog">
     <button class="close" type="button" aria-label="닫기">
       ×
     </button>
 
     <p class="eyebrow">ADMISSION TICKET</p>
-
     <h2>여우사이</h2>
 
     <div class="ticket-stub">
@@ -604,7 +586,7 @@
 
       <div>
         <small>PLACE</small>
-        <strong>삼덕교회 교육관</strong>
+        <strong>삼덕교회</strong>
       </div>
     </div>
 
@@ -613,6 +595,6 @@
     </p>
   </dialog>
 
-  <script src="script.js"></script>
+  <script src="./script.js?v=5"></script>
 </body>
 </html>

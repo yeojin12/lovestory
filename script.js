@@ -1,54 +1,30 @@
-/* ==================================================
-   나의 티켓 팝업
-================================================== */
-
 const ticketDialog = document.querySelector("#ticket-dialog");
 const ticketOpenButton = document.querySelector("[data-open-ticket]");
 const ticketCloseButton = ticketDialog.querySelector(".close");
 
-/* 나의 티켓 버튼을 누르면 팝업 열기 */
 ticketOpenButton.addEventListener("click", () => {
   ticketDialog.showModal();
 });
 
-/* × 버튼을 누르면 팝업 닫기 */
 ticketCloseButton.addEventListener("click", () => {
   ticketDialog.close();
 });
 
-/* 팝업 바깥쪽 어두운 영역을 누르면 닫기 */
 ticketDialog.addEventListener("click", (event) => {
   if (event.target === ticketDialog) {
     ticketDialog.close();
   }
 });
 
-
-/* ==================================================
-   뮤지컬 시놉시스 열기와 닫기
-================================================== */
-
 document.querySelectorAll("[data-expand]").forEach((button) => {
   button.addEventListener("click", () => {
-    const panelId = button.dataset.expand;
-    const panel = document.getElementById(panelId);
+    const panel = document.getElementById(button.dataset.expand);
     const symbol = button.querySelector("span");
 
     panel.classList.toggle("open");
-
-    /* 열려 있으면 −, 닫혀 있으면 ＋ 표시 */
-    if (panel.classList.contains("open")) {
-      symbol.textContent = "−";
-    } else {
-      symbol.textContent = "＋";
-    }
+    symbol.textContent = panel.classList.contains("open") ? "−" : "＋";
   });
 });
-
-
-/* ==================================================
-   등장인물 정보
-================================================== */
 
 const characters = {
   haru: {
@@ -112,43 +88,29 @@ const characters = {
   }
 };
 
-
-/* 등장인물 팝업 안의 요소 가져오기 */
 const characterDialog = document.querySelector("#character-dialog");
 const characterCloseButton =
   characterDialog.querySelector(".character-close");
-
 const characterSymbol =
   characterDialog.querySelector(".character-symbol");
-
 const characterType =
   characterDialog.querySelector(".character-type");
-
 const characterName =
   characterDialog.querySelector(".character-name");
-
 const characterMeta =
   characterDialog.querySelector(".character-meta");
-
 const characterLost =
   characterDialog.querySelector(".character-lost");
-
 const characterQuote =
   characterDialog.querySelector(".character-quote");
-
 const characterDescription =
   characterDialog.querySelector(".character-description");
 
-
-/* 등장인물 카드를 누르면 해당 정보로 팝업 열기 */
 document.querySelectorAll("[data-character]").forEach((profile) => {
   profile.addEventListener("click", () => {
-    const characterId = profile.dataset.character;
-    const character = characters[characterId];
+    const character = characters[profile.dataset.character];
 
-    if (!character) {
-      return;
-    }
+    if (!character) return;
 
     characterSymbol.textContent = character.symbol;
     characterType.textContent = character.type;
@@ -162,24 +124,15 @@ document.querySelectorAll("[data-character]").forEach((profile) => {
   });
 });
 
-
-/* 등장인물 팝업 × 버튼 */
 characterCloseButton.addEventListener("click", () => {
   characterDialog.close();
 });
 
-
-/* 등장인물 팝업 바깥쪽을 누르면 닫기 */
 characterDialog.addEventListener("click", (event) => {
   if (event.target === characterDialog) {
     characterDialog.close();
   }
 });
-
-
-/* ==================================================
-   로비플레이 상세 정보
-================================================== */
 
 const plays = {
   fourcut: {
@@ -334,58 +287,39 @@ const plays = {
 
 const playGroups = {
   photo: {
-    title: '사진으로 남기기',
-    items: ['fourcut', 'mirror']
+    title: "사진으로 남기기",
+    items: ["fourcut", "mirror"]
   },
 
   heart: {
-    title: '마음 나누기',
-    items: ['scratch', 'guestbook', 'pharmacy']
+    title: "마음 나누기",
+    items: ["scratch", "guestbook", "pharmacy"]
   },
 
   make: {
-    title: '직접 만들기',
-    items: ['personalcolor', 'shrinkles']
+    title: "직접 만들기",
+    items: ["personalcolor", "shrinkles"]
   },
 
   game: {
-    title: '함께 놀기',
-    items: ['jenga', 'draw']
+    title: "함께 놀기",
+    items: ["jenga", "draw"]
   }
 };
 
-/* ==================================================
-   로비플레이 상세 화면 열기
-================================================== */
-
 const detailPage = document.querySelector("#play-detail");
-
-const detailIcon =
-  detailPage.querySelector(".detail-icon");
-
-const detailKicker =
-  detailPage.querySelector(".detail-kicker");
-
-const detailTitle =
-  detailPage.querySelector(".detail-title");
-
-const detailSummary =
-  detailPage.querySelector(".detail-summary");
-
+const detailIcon = detailPage.querySelector(".detail-icon");
+const detailKicker = detailPage.querySelector(".detail-kicker");
+const detailTitle = detailPage.querySelector(".detail-title");
+const detailSummary = detailPage.querySelector(".detail-summary");
 const detailDescription =
   detailPage.querySelector(".detail-description");
+const detailSteps = detailPage.querySelector(".detail-steps");
 
-const detailSteps =
-  detailPage.querySelector(".detail-steps");
-
-
-/* 선택한 로비플레이 내용으로 상세 화면 표시 */
 function openPlayDetail(id, updateHistory = true) {
   const play = plays[id];
 
-  if (!play) {
-    return;
-  }
+  if (!play) return;
 
   detailIcon.textContent = play.icon;
   detailKicker.textContent = `${play.number} · LOBBY PLAY`;
@@ -399,13 +333,10 @@ function openPlayDetail(id, updateHistory = true) {
 
   detailPage.classList.add("open");
   detailPage.setAttribute("aria-hidden", "false");
+  detailPage.scrollTop = 0;
 
   document.body.classList.add("detail-open");
 
-  /* 상세 화면의 스크롤 위치를 맨 위로 이동 */
-  detailPage.scrollTop = 0;
-
-  /* 주소에 선택한 로비플레이 이름 기록 */
   if (updateHistory) {
     history.pushState(
       { play: id },
@@ -415,8 +346,6 @@ function openPlayDetail(id, updateHistory = true) {
   }
 }
 
-
-/* 로비플레이 상세 화면 닫기 */
 function closePlayDetail(updateAddress = true) {
   detailPage.classList.remove("open");
   detailPage.setAttribute("aria-hidden", "true");
@@ -427,18 +356,23 @@ function closePlayDetail(updateAddress = true) {
     history.replaceState(null, "", "#play");
   }
 }
-const picker = document.querySelector('#play-picker');
-const pickerTitle = picker.querySelector('#play-picker-title');
-const pickerList = picker.querySelector('.picker-list');
 
-let pickerReturnTarget = null;
+const picker = document.querySelector("#play-picker");
+const pickerTitle = picker.querySelector("#play-picker-title");
+const pickerList = picker.querySelector(".picker-list");
 
-function openPicker(groupId, button) {
+function closePicker() {
+  picker.classList.remove("open");
+  picker.setAttribute("aria-hidden", "true");
+
+  document.body.classList.remove("picker-open");
+}
+
+function openPicker(groupId) {
   const group = playGroups[groupId];
 
   if (!group) return;
 
-  pickerReturnTarget = button;
   pickerTitle.textContent = group.title;
 
   pickerList.innerHTML = group.items
@@ -454,72 +388,61 @@ function openPicker(groupId, button) {
             <small>${item.summary}</small>
           </span>
 
-          <i>›</i>
+          <i aria-hidden="true">›</i>
         </button>
       `;
     })
-    .join('');
+    .join("");
 
-  /* 새로 만들어진 개별 버튼에 상세페이지 기능 연결 */
   pickerList
-    .querySelectorAll('[data-picker-play]')
+    .querySelectorAll("[data-picker-play]")
     .forEach((playButton) => {
-      playButton.addEventListener('click', () => {
+      playButton.addEventListener("click", () => {
         const playId = playButton.dataset.pickerPlay;
 
         closePicker();
 
-        /* 선택창이 닫힌 직후 기존 상세페이지 열기 */
         requestAnimationFrame(() => {
           openPlayDetail(playId);
         });
       });
     });
 
-  picker.classList.add('open');
-  picker.setAttribute('aria-hidden', 'false');
-  document.body.classList.add('picker-open');
-}
+  picker.classList.add("open");
+  picker.setAttribute("aria-hidden", "false");
 
-function closePicker() {
-  picker.classList.remove('open');
-  picker.setAttribute('aria-hidden', 'true');
-
-  document.body.classList.remove('picker-open');
+  document.body.classList.add("picker-open");
 }
 
 document
-  .querySelectorAll('[data-play-group]')
+  .querySelectorAll("[data-play-group]")
   .forEach((button) => {
-    button.addEventListener('click', () => {
-      openPicker(button.dataset.playGroup, button);
+    button.addEventListener("click", () => {
+      openPicker(button.dataset.playGroup);
     });
   });
 
 picker
-  .querySelectorAll('[data-close-picker]')
+  .querySelectorAll("[data-close-picker]")
   .forEach((button) => {
-    button.addEventListener('click', closePicker);
+    button.addEventListener("click", closePicker);
   });
 
-document.addEventListener('keydown', (event) => {
+document.querySelectorAll("[data-play]").forEach((button) => {
+  button.addEventListener("click", () => {
+    openPlayDetail(button.dataset.play);
+  });
+});
+
+document.addEventListener("keydown", (event) => {
   if (
-    event.key === 'Escape' &&
-    picker.classList.contains('open')
+    event.key === "Escape" &&
+    picker.classList.contains("open")
   ) {
     closePicker();
   }
 });
 
-/* 로비플레이 카드에 클릭 기능 연결 */
-document.querySelectorAll("[data-play]").forEach((card) => {
-  card.addEventListener("click", () => {
-    openPlayDetail(card.dataset.play);
-  });
-});
-
-
-/* 상세 화면의 뒤로가기 버튼 */
 document
   .querySelector(".detail-back")
   .addEventListener("click", () => {
@@ -530,8 +453,6 @@ document
     }
   });
 
-
-/* 상세 화면의 홈 버튼 */
 document
   .querySelector(".detail-home")
   .addEventListener("click", () => {
@@ -539,8 +460,6 @@ document
     location.hash = "home";
   });
 
-
-/* 브라우저 자체 뒤로가기 버튼 대응 */
 window.addEventListener("popstate", () => {
   const matchedPlay =
     location.hash.match(/^#play\/(.+)$/);
@@ -552,8 +471,6 @@ window.addEventListener("popstate", () => {
   }
 });
 
-
-/* 로비 상세 주소로 사이트에 바로 들어온 경우 */
 const initialPlay =
   location.hash.match(/^#play\/(.+)$/);
 

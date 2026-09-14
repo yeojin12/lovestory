@@ -1,7 +1,3 @@
-/* ========================================
-   로비플레이 상세 화면
-======================================== */
-
 body.detail-open {
   overflow: hidden;
 }
@@ -41,11 +37,6 @@ body.detail-open {
   transform: translateX(0);
 }
 
-
-/* ========================================
-   상단 흰색 메뉴바
-======================================== */
-
 .detail-topbar {
   position: sticky;
   top: 0;
@@ -66,7 +57,6 @@ body.detail-open {
     0 5px 16px rgb(82 45 56 / 7%);
 }
 
-/* LOBBY PLAY */
 .detail-topbar span {
   min-width: 0;
 
@@ -80,7 +70,6 @@ body.detail-open {
   text-align: center;
 }
 
-/* 뒤로가기와 홈 버튼 */
 .detail-topbar button {
   display: grid;
   place-items: center;
@@ -98,11 +87,6 @@ body.detail-open {
   line-height: 1;
 }
 
-
-/* ========================================
-   분홍색 상단 영역
-======================================== */
-
 .detail-hero {
   display: flex;
   min-height: 405px;
@@ -115,7 +99,6 @@ body.detail-open {
   text-align: center;
 }
 
-/* 원형 아이콘 */
 .detail-icon {
   display: grid;
   place-items: center;
@@ -133,7 +116,6 @@ body.detail-open {
   line-height: 1;
 }
 
-/* 01 · LOBBY PLAY */
 .detail-kicker {
   width: 100%;
   margin: 0 0 14px;
@@ -147,7 +129,6 @@ body.detail-open {
   text-align: center;
 }
 
-/* 인생네컷, 포토존 등의 제목 */
 .detail-title {
   width: 100%;
   margin: 0;
@@ -161,7 +142,6 @@ body.detail-open {
   word-break: keep-all;
 }
 
-/* 제목 아래 소개 문장 */
 .detail-summary {
   width: 100%;
   max-width: 360px;
@@ -180,11 +160,6 @@ body.detail-open {
   overflow-wrap: break-word;
 }
 
-
-/* ========================================
-   상세 본문
-======================================== */
-
 .detail-content {
   width: 100%;
   max-width: 600px;
@@ -201,7 +176,6 @@ body.detail-open {
   padding: 0 0 34px;
 }
 
-/* 어떤 체험인가요?, 참여 방법 */
 .detail-content h3 {
   width: 100%;
   margin: 0 0 14px;
@@ -215,7 +189,6 @@ body.detail-open {
   word-break: keep-all;
 }
 
-/* 본문 글자 */
 .detail-content section p,
 .detail-content li {
   color: var(--deep);
@@ -237,11 +210,6 @@ body.detail-open {
   margin: 0;
   padding: 0;
 }
-
-
-/* ========================================
-   장소와 운영 시간
-======================================== */
 
 .detail-info {
   display: grid;
@@ -285,11 +253,6 @@ body.detail-open {
   line-height: 1.45;
 }
 
-
-/* ========================================
-   참여 방법
-======================================== */
-
 .detail-steps {
   width: 100%;
 
@@ -306,11 +269,6 @@ body.detail-open {
 .detail-steps li:last-child {
   margin-bottom: 0;
 }
-
-
-/* ========================================
-   작은 휴대폰
-======================================== */
 
 @media (max-width: 380px) {
   .detail-hero {
@@ -358,11 +316,6 @@ body.detail-open {
   }
 }
 
-
-/* ========================================
-   PC 화면
-======================================== */
-
 @media (min-width: 700px) {
   .play-detail {
     right: auto;
@@ -375,16 +328,12 @@ body.detail-open {
   }
 
   .detail-topbar {
-    /* 바 전체 모서리를 둥글게 */
+
     margin-top: 12px;
 
     border-radius: 18px;
   }
 }
-
-/* ==================================================
-   로비플레이 제어센터
-================================================== */
 
 .play-control {
   position: relative;
@@ -519,11 +468,6 @@ body.detail-open {
   font-size: 11px;
   text-align: center;
 }
-
-
-/* ==================================================
-   로비플레이 선택 팝업
-================================================== */
 
 .play-picker {
   position: fixed;
