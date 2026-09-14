@@ -3964,3 +3964,122 @@ body.picker-open .bottom-nav {
     gap: 9px !important;
   }
 }
+
+/* ==================================================
+   최종 위치·장식 수정
+================================================== */
+
+/* 1. 메인 제목 조금 더 굵게 */
+.hero h1 {
+  font-weight: 760 !important;
+}
+
+/* 2. 상단바 장식 완전히 제거 */
+.topbar::before,
+.topbar::after,
+.wordmark::before,
+.wordmark::after,
+.ticket-button::before,
+.ticket-button::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* 여우사이 앞 동그라미 제거 후 위치 정리 */
+.wordmark {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* 나의 티켓 앞 화살표 제거 후 가운데 정렬 */
+.ticket-button {
+  justify-content: center !important;
+  margin-right: 0 !important;
+  padding: 0 22px !important;
+}
+
+/* 3. CAST를 첫 번째 배우 카드 좌측선에 맞춤 */
+#musical .subheading {
+  margin-left: 40px !important;
+  letter-spacing: 0.18em;
+}
+
+/* 4. 시간표 제목과 박스를 02 구역 기준선에 맞춤 */
+@media (max-width: 600px) {
+  #schedule {
+    padding-right: 20px !important;
+    padding-left: 44px !important;
+  }
+
+  #schedule .section-heading {
+    width: 100% !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  #schedule .timeline {
+    width: 100% !important;
+    max-width: none !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    transform: none !important;
+  }
+}
+
+/* ==================================================
+   상단바와 시간표 내부 정렬 최종 수정
+================================================== */
+
+/* 여우사이 글자가 왼쪽 벽에 붙지 않도록 간격 복구 */
+.wordmark {
+  margin-left: 0 !important;
+  padding-left: 20px !important;
+}
+
+
+/* 시간표 박스는 화면 중앙 유지 */
+#schedule .timeline {
+  box-sizing: border-box !important;
+
+  width: min(100%, 520px) !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+
+  transform: none !important;
+}
+
+/* 시간·세로선·일정 문구 전체를 오른쪽으로 이동 */
+#schedule .timeline > div {
+  position: relative;
+  left: 24px;
+
+  width: calc(100% - 24px);
+}
+
+
+/* 휴대폰에서도 같은 비율과 위치 유지 */
+@media (max-width: 600px) {
+  #schedule {
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+  }
+
+  #schedule .section-heading {
+    width: calc(100% - 48px) !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  #schedule .timeline {
+    width: calc(100% - 16px) !important;
+    max-width: 520px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  #schedule .timeline > div {
+    left: 20px;
+
+    width: calc(100% - 20px);
+  }
+}
