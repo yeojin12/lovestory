@@ -10,24 +10,21 @@
 
   <title>여우사이 | 가이드북</title>
 
-  <!-- Google Fonts 연결 속도 개선 -->
   <link
     href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   >
-  <!-- 기본 글꼴 Pretendard -->
+
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"
   >
 
-  <!-- 메인 제목 및 기존 글꼴 -->
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap"
   >
 
-  <!-- 사이트 CSS -->
   <link rel="stylesheet" href="./styles.css?v=57">
   <link rel="stylesheet" href="./detail.css?v=10">
 </head>
@@ -226,7 +223,7 @@
 
           <span>
             <strong>사진으로 남기기</strong>
-            <small>인생네컷 · 포토존</small>
+            <small>포토박스 · 포토존</small>
           </span>
         </button>
 
@@ -253,7 +250,7 @@
 
             <span>
               <strong>직접 만들기</strong>
-              <small>2가지 플레이</small>
+              <small>1가지 플레이</small>
             </span>
           </button>
 
@@ -290,8 +287,6 @@
       </div>
     </section>
 
-    
-
     <section class="section" id="schedule">
       <div class="section-heading">
         <span>03</span>
@@ -309,7 +304,7 @@
 
           <p>
             <strong>로비 플레이</strong>
-            <small>10가지 프로그램 자유 체험</small>
+            <small>8가지 프로그램 자유 체험</small>
           </p>
         </div>
 
@@ -355,18 +350,18 @@
         </div>
       </div>
 
-      <div class="map-placeholder">
-        <span>
-          배치도 준비중<br>
-          
-        </span>
+      <div class="map-placeholder booth-map">
+        <img
+          src="./assets/booth-map-numbered.png?v=1"
+          alt="로비플레이 부스 배치도"
+        >
       </div>
 
       <div class="notice-card">
-        <strong> 잠깐, 확인해주세요</strong>
+        <strong>잠깐, 확인해주세요</strong>
 
         <p>
-           입장과 행사 이용에 필요한 안내사항을 정리합니다.
+          입장과 행사 이용에 필요한 안내사항을 정리합니다.
         </p>
       </div>
     </section>
@@ -385,16 +380,37 @@
         <span class="seal">♡</span>
 
         <p>
-          @ccc_lovefestival을 팔로우하고<br>
-          현장 이벤트에 참여해보세요.
+          <strong>여우사이 초대 인증 이벤트</strong><br>
+          친구를 여우사이에 초대하고<br>
+          배달의민족 1만 원권에 응모해보세요.
         </p>
 
-        <button type="button">
-          이벤트 준비중
+        <p>
+          1. @ccc_lovefestival 계정을 팔로우해요.<br>
+          2. 초대 티켓을 친구에게 전하고 함께 인증사진을 찍어요.<br>
+          3. 티켓의 QR코드로 친구가 여우사이를 신청해요.<br>
+          4. 사진에 @ccc_lovefestival과 @daegu_ccc를 태그해 스토리에 올려요.
+        </p>
+
+        <p>
+          <strong>참여 기간</strong> 9.17–9.30<br>
+          <strong>이벤트 상품</strong> 배달의민족 1만 원권 · 10명
+        </p>
+
+        <button
+          type="button"
+          onclick="window.open(
+            'https://www.instagram.com/ccc_lovefestival/',
+            '_blank',
+            'noopener,noreferrer'
+          )"
+        >
+          인스타그램 바로가기 ↗
         </button>
       </div>
     </section>
   </main>
+
   <div
     class="play-picker"
     id="play-picker"
@@ -499,7 +515,7 @@
         01 · LOBBY PLAY
       </p>
 
-      <h2 class="detail-title">인생네컷</h2>
+      <h2 class="detail-title">포토박스 &amp; 포토존</h2>
       <p class="detail-summary"></p>
     </div>
 
@@ -512,12 +528,12 @@
       <div class="detail-info">
         <div>
           <small>장소</small>
-          <strong>추후 안내</strong>
+          <strong class="detail-place">1번 부스</strong>
         </div>
 
         <div>
           <small>운영 시간</small>
-          <strong>추후 안내</strong>
+          <strong>17:00부터</strong>
         </div>
       </div>
 
@@ -602,6 +618,6 @@
     </p>
   </dialog>
 
-  <script src="./script.js?v=5"></script>
+  <script src="./script.js?v=7"></script>
 </body>
 </html>
