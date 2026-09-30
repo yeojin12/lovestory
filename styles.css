@@ -4421,3 +4421,163 @@ main {
   font-size: 14px;
   font-weight: 800;
 }
+
+.instagram-event {
+  width: min(100% - 32px, 720px);
+  margin: 0 auto;
+  padding: 56px 28px 48px;
+  text-align: center;
+  border-radius: 48px 48px 0 0;
+  background:
+    radial-gradient(circle at 50% 8%, rgba(255,255,255,.5), transparent 30%),
+    linear-gradient(145deg, #efbfd0 0%, #f8dce6 55%, #f2cbd8 100%);
+  color: #542d39;
+}
+
+.event-heart {
+  display: grid;
+  place-items: center;
+  width: 126px;
+  height: 126px;
+  margin: 0 auto 24px; /* 하트와 제목 사이 간격 */
+  border-radius: 50%;
+  background: #5b2e3b;
+  color: #e7a9bf;
+  font-family: Arial, sans-serif;
+  font-size: 68px;
+  line-height: 1;
+}
+
+.event-title {
+  margin: 0 0 48px;
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
+  font-size: clamp(25px, 5vw, 34px);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.event-description {
+  margin: 0 0 46px;
+  font-family: "Gowun Batang", serif;
+  font-size: clamp(22px, 4.8vw, 31px);
+  font-weight: 700;
+  line-height: 1.65;
+  word-break: keep-all;
+}
+
+.event-steps {
+  max-width: 650px;
+  margin: 0 auto 42px;
+  padding: 0;
+  list-style-position: inside;
+  text-align: center; /* 1~4번 중앙 정렬 */
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
+  font-size: clamp(16px, 3.6vw, 22px);
+  font-weight: 500;
+  line-height: 1.55;
+  word-break: keep-all;
+}
+
+.event-steps li {
+  margin: 7px 0;
+}
+
+.event-steps li::marker {
+  font-variant-numeric: tabular-nums;
+}
+
+.event-steps strong {
+  font-weight: 800;
+}
+
+.event-period {
+  margin: 0 0 32px;
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
+  font-size: clamp(16px, 3.6vw, 22px);
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.event-prize {
+  margin: 0 0 48px;
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
+  font-size: clamp(14px, 3.15vw, 20px);
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: nowrap; /* 상품 내용을 한 줄로 고정 */
+  letter-spacing: -0.035em;
+}
+
+.instagram-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 560px);
+  min-height: 76px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  border: 1px solid rgba(172, 91, 124, 0.45);
+  border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,.78),
+    rgba(237,174,198,.65)
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.8),
+    0 12px 30px rgba(108, 54, 75, .12);
+  color: #542d39;
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  .instagram-event {
+    width: calc(100% - 20px);
+    padding: 42px 14px 40px;
+    border-radius: 38px 38px 0 0;
+  }
+
+  .event-heart {
+    width: 104px;
+    height: 104px;
+    margin-bottom: 22px;
+    font-size: 55px;
+  }
+
+  .event-title {
+    margin-bottom: 36px;
+    font-size: 22px;
+  }
+
+  .event-description {
+    margin-bottom: 36px;
+    font-size: 20px;
+    line-height: 1.65;
+  }
+
+  .event-steps {
+    margin-bottom: 34px;
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: -0.035em;
+  }
+
+  .event-period {
+    margin-bottom: 27px;
+    font-size: 15px;
+  }
+
+  .event-prize {
+    margin-bottom: 38px;
+    font-size: 12.5px;
+    letter-spacing: -0.055em;
+  }
+
+  .instagram-link {
+    min-height: 64px;
+    font-size: 17px;
+  }
+}
