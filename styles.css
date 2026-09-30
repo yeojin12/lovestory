@@ -4581,3 +4581,46 @@ main {
     font-size: 17px;
   }
 }
+
+/* 인스타그램 이벤트 크기 재조정 */
+.event-heart {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 20px;
+  font-size: 46px;
+}
+
+.event-title {
+  margin: 0 0 34px;
+  font-size: 22px;
+  line-height: 1.35;
+}
+
+.event-description {
+  margin: 0 0 36px;
+  font-size: 21px;
+  line-height: 1.65;
+  letter-spacing: -0.035em;
+  word-break: keep-all;
+}
+
+@media (max-width: 480px) {
+  .event-heart {
+    width: 76px;
+    height: 76px;
+    margin-bottom: 17px;
+    font-size: 40px;
+  }
+
+  .event-title {
+    margin-bottom: 30px;
+    font-size: 19px;
+  }
+
+  .event-description {
+    margin-bottom: 32px;
+    font-size: 17px;
+    line-height: 1.65;
+    letter-spacing: -0.045em;
+  }
+}
