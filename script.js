@@ -138,149 +138,112 @@ const plays = {
   fourcut: {
     number: "01",
     icon: "▣",
-    title: "인생네컷",
-    summary: "새로운 친구와 함께 오늘의 추억을 남겨요.",
+    title: "포토박스 & 포토존",
+    place: "1번 부스",
+    summary: "친구와 함께 오늘의 추억을 사진으로 남겨요.",
     description:
-      "여우사이에서 만난 새로운 친구와 함께 사진을 찍고, 오늘의 추억을 네 컷으로 남기는 포토 체험입니다.",
+      "페스티벌에 빠질 수 없는 사진! 포토박스와 포토존에서 친구와 함께 추억 남기기는 필수📸",
     steps: [
-      "함께 사진을 찍을 친구를 찾아보세요.",
-      "촬영 공간에서 원하는 소품을 골라주세요.",
-      "화면 안내에 맞춰 네 컷을 촬영하세요.",
-      "완성된 사진을 확인하고 추억으로 간직하세요."
-    ]
-  },
-
-  mirror: {
-    number: "02",
-    icon: "◇",
-    title: "포토존",
-    summary: "전신거울 앞에서 우리만의 사진을 남겨요.",
-    description:
-      "잘 꾸며진 여우사이 전신거울 포토존에서 새로운 친구와 함께 자유롭게 사진을 남기는 체험입니다.",
-    steps: [
-      "거울 주변의 소품과 문구를 살펴보세요.",
-      "함께 촬영할 친구와 원하는 포즈를 정하세요.",
-      "전신거울을 이용해 자유롭게 촬영하세요.",
-      "다음 사람을 위해 소품을 제자리에 놓아주세요."
+      "포토박스와 포토존에서 친구와 함께 사진도 남기고, 추억도 남기고 가자!"
     ]
   },
 
   scratch: {
-    number: "03",
+    number: "02",
     icon: "✦",
     title: "스크래치카드",
-    summary: "카드를 긁어 오늘의 메시지를 확인해요.",
+    place: "2번 부스",
+    summary: "나의 생각은 남겨두고, 다른 생각도 꺼내봐요.",
     description:
-      "마음이 가는 카드를 한 장 고르고 스크래치 부분을 긁어, 오늘 나에게 찾아온 작은 메시지를 확인하는 체험입니다.",
+      "나의 생각은 남겨두고, 다른 생각도 꺼내보자!",
     steps: [
-      "마음이 가는 스크래치카드를 골라주세요.",
-      "카드의 은색 부분을 천천히 긁어보세요.",
-      "카드에 나타난 메시지를 읽어보세요.",
-      "확인한 카드는 추억으로 가져가세요."
+      "여러 주제 중 하나의 질문에 대답을 적어 스크래치 카드 만들기",
+      "만든 스크래치 카드는 넣어두고, 같은 질문의 다른 스크래치 카드를 긁어 생각 읽어보기!"
     ]
   },
 
   guestbook: {
-    number: "04",
+    number: "03",
     icon: "✎",
-    title: "방명록",
-    summary: "오늘의 마음과 하고 싶은 말을 남겨요.",
+    title: "방명록: 우리들의 이야기",
+    place: "3번 부스",
+    summary: "얼굴과 기대를 담은 순간을 기록해요.",
     description:
-      "행사에 들어가기 전 잠시 멈춰, 오늘의 마음과 누군가에게 하고 싶은 말을 자유롭게 기록하는 공간입니다.",
+      "여우사이에 앞서, 방명록에 얼굴과 기대를 담은 순간을 기록하자!",
     steps: [
-      "준비된 방명록이나 카드를 골라주세요.",
-      "오늘의 마음과 하고 싶은 말을 자유롭게 적어주세요.",
-      "작성한 글을 안내된 공간에 남겨주세요."
-    ]
-  },
-
-  personalcolor: {
-    number: "05",
-    icon: "◐",
-    title: "퍼스널컬러",
-    summary: "나에게 어울리는 색을 찾아보는 시간.",
-    description:
-      "나는 웜톤일까요, 쿨톤일까요? 다양한 색을 얼굴 가까이에 대보며 나에게 잘 어울리는 퍼스널컬러를 가볍게 알아봅니다.",
-    steps: [
-      "준비된 여러 색상의 천이나 카드를 살펴보세요.",
-      "각 색상을 얼굴 가까이에 대보세요.",
-      "얼굴이 더 밝고 생기 있어 보이는 색을 찾아보세요.",
-      "친구와 서로 어울리는 색을 이야기해보세요."
+      "색칠도구로 도화지에 자유롭게 얼굴 그리기!",
+      "나누고픈 기대와 소감도 함께! ♡"
     ]
   },
 
   pharmacy: {
-    number: "06",
+    number: "04",
     icon: "＋",
     title: "마음의 약국",
+    place: "4번 부스",
     summary: "지금 내 마음에 필요한 처방을 받아요.",
     description:
-      "현재 나의 마음이 어떤 상태인지 돌아보고, 마음에 따라 필요한 위로와 응원의 메시지를 처방받는 체험입니다.",
+      "잃어버린 것을 찾아서 떠나는 뮤지컬 주인공처럼, 우리가 잃어버리며 살아가고 있는 게 무엇일까?",
     steps: [
-      "지금 내 마음과 가장 가까운 항목을 골라주세요.",
-      "안내에 따라 마음을 천천히 진단해보세요.",
-      "나에게 맞는 마음 처방을 받아보세요.",
-      "처방 메시지를 천천히 읽고 가져가세요."
+      "마음진단서를 작성하며 나의 마음을 마주하기!",
+      "달달한 약을 처방 받고, 회복으로 나아가기♡"
     ]
   },
 
   shrinkles: {
-    number: "07",
+    number: "05",
     icon: "♧",
-    title: "슈링클스",
-    summary: "직접 꾸민 그림을 작은 소품으로 만들어요.",
+    title: "슈링클스: 사랑을 굽다",
+    place: "5번 부스",
+    summary: "사랑을 그리고 구워 나만의 키링을 만들어요.",
     description:
-      "그림이나 문구를 직접 그리고 열을 가해, 작고 단단한 나만의 소품으로 만드는 체험입니다. 자세한 진행 방식은 추후 안내될 예정입니다.",
+      "너가 생각하는 사랑은 뭐야? 사랑을 그리고 구워 나만의 키링을 만들기!",
     steps: [
-      "준비된 도안 중 원하는 모양을 골라주세요.",
-      "도안에 원하는 그림이나 글을 표현해보세요.",
-      "완성한 도안을 진행자에게 전달해주세요.",
-      "완성된 슈링클스 소품을 받아가세요."
+      "내가 생각하는 사랑을 슈링클스 판 위에 그리기",
+      "판을 구워 키링으로 만들어 간직하기!"
     ]
   },
 
   jenga: {
-    number: "08",
+    number: "06",
     icon: "▥",
-    title: "대형 젠가",
-    summary: "새로운 친구들과 젠가 게임 한 판!",
+    title: "Missionary Possible",
+    place: "6번 부스",
+    summary: "3단계 미션을 완수하고 미션요원이 되어봐요.",
     description:
-      "오메, 젠가가 크다! 커다란 블록을 한 개씩 빼고 다시 쌓으며 친구들과 함께 즐기는 대형 젠가 게임입니다.",
+      "3단계의 미션을 성공적으로 완수하여 미션요원 수료증을 얻자!",
     steps: [
-      "함께 게임할 친구들과 순서를 정해주세요.",
-      "자신의 차례에 블록 하나를 조심스럽게 빼세요.",
-      "뺀 블록을 젠가의 가장 위에 올려주세요.",
-      "젠가가 무너지면 안전하게 함께 정리해주세요."
+      "3단계 미션은 >> 당일공개 <<",
+      "미션을 완수하고 미션 수료증과 선물을 받아가자!"
     ]
   },
 
   draw: {
-    number: "09",
+    number: "07",
     icon: "?",
-    title: "대왕 종이판 뽑기",
-    summary: "레트로 감성의 대형 뽑기 게임.",
+    title: "스탬프 카드 & 대왕 종이판 뽑기",
+    place: "7번 부스",
+    summary: "스탬프카드에 사인을 모아 뽑기에 도전해요.",
     description:
-      "커다란 종이판에서 마음이 가는 칸을 골라 뽑고, 그 안에 숨겨진 결과와 상품을 확인하는 레트로 감성의 뽑기 게임입니다.",
+      "스탬프카드에 사인을 모아, 뽑기하자!",
     steps: [
-      "참여 방법과 남아 있는 뽑기 칸을 확인해주세요.",
-      "마음이 가는 칸 하나를 골라주세요.",
-      "선택한 종이판을 열어 결과를 확인하세요.",
-      "당첨된 상품은 안내에 따라 받아가세요."
+      "각 부스 앞에 배치된 스탬프 카드를 가지고 부스 체험이 끝날 때마다 사인을 받는다!",
+      "모은 스탬프카드를 뽑기 부스로 가지고 가서 뽑는다!",
+      "스탬프 카드는 새친구에게만 적용됩니다:)"
     ]
   },
 
   musicalboard: {
-    number: "10",
+    number: "08",
     icon: "♡",
-    title: "뮤지컬 소개판",
-    summary: "공연을 보기 전 인물과 이야기를 먼저 만나요.",
+    title: "뮤지컬 소개 부스",
+    place: "8번 부스",
+    summary: "공연의 핵심 주제와 인물들을 먼저 만나요.",
     description:
-      "오늘 공연되는 뮤지컬 ‘찾아 주셔서 고맙습니다’의 등장인물과 이야기, 공연의 주요 내용을 미리 살펴볼 수 있는 소개 공간입니다.",
+      "뮤지컬 관람 전 극의 핵심 주제와 인물들에 대해 살펴보는 공간!",
     steps: [
-      "뮤지컬의 전체 이야기를 먼저 읽어보세요.",
-      "등장인물과 각 인물의 분실물을 살펴보세요.",
-      "마음에 남는 인물이나 문장을 찾아보세요.",
-      "소개 내용을 떠올리며 뮤지컬을 관람해보세요."
+      "뮤지컬을 더 잘 이해하며 관람하기 위해 뮤지컬 소개 부스는 필수♡",
+      "뮤지컬 소개를 살펴본 뒤 ‘마음의 약국’ 체험까지 이어서 참여하기!"
     ]
   }
 };
@@ -288,7 +251,7 @@ const plays = {
 const playGroups = {
   photo: {
     title: "사진으로 남기기",
-    items: ["fourcut", "mirror"]
+    items: ["fourcut"]
   },
 
   heart: {
@@ -298,7 +261,7 @@ const playGroups = {
 
   make: {
     title: "직접 만들기",
-    items: ["personalcolor", "shrinkles"]
+    items: ["shrinkles"]
   },
 
   game: {
@@ -312,8 +275,8 @@ const detailIcon = detailPage.querySelector(".detail-icon");
 const detailKicker = detailPage.querySelector(".detail-kicker");
 const detailTitle = detailPage.querySelector(".detail-title");
 const detailSummary = detailPage.querySelector(".detail-summary");
-const detailDescription =
-  detailPage.querySelector(".detail-description");
+const detailDescription = detailPage.querySelector(".detail-description");
+const detailPlace = detailPage.querySelector(".detail-place");
 const detailSteps = detailPage.querySelector(".detail-steps");
 
 function openPlayDetail(id, updateHistory = true) {
@@ -326,6 +289,7 @@ function openPlayDetail(id, updateHistory = true) {
   detailTitle.textContent = play.title;
   detailSummary.textContent = play.summary;
   detailDescription.textContent = play.description;
+  detailPlace.textContent = play.place;
 
   detailSteps.innerHTML = play.steps
     .map((step) => `<li>${step}</li>`)
