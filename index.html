@@ -25,8 +25,8 @@
     href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap"
   >
 
-  <link rel="stylesheet" href="./styles.css?v=60">
-  <link rel="stylesheet" href="./detail.css?v=10">
+  <link rel="stylesheet" href="./styles.css?v=61">
+  <link rel="stylesheet" href="./detail.css?v=11">
 </head>
 
 <body>
@@ -350,10 +350,34 @@
         </div>
       </div>
 
-      <div class="map-placeholder booth-map">
+      <div
+        class="booth-map"
+        style="
+          width: 100%;
+          height: auto;
+          padding: 10px;
+          border: 1px solid rgba(201, 116, 149, 0.28);
+          border-radius: 24px;
+          background: linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.92),
+            rgba(249, 220, 231, 0.7)
+          );
+          box-shadow: 0 16px 35px rgba(89, 44, 60, 0.1);
+          overflow: hidden;
+        "
+      >
         <img
-          src="./assets/booth-map-numbered.png?v=1"
+          src="./assets/booth-map-numbered.png?v=3"
           alt="로비플레이 부스 배치도"
+          style="
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            object-fit: contain;
+          "
         >
       </div>
 
@@ -618,6 +642,6 @@
     </p>
   </dialog>
 
-  <script src="./script.js?v=8"></script>
+  <script src="./script.js?v=9"></script>
 </body>
 </html>

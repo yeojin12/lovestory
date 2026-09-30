@@ -89,20 +89,28 @@ const characters = {
 };
 
 const characterDialog = document.querySelector("#character-dialog");
+
 const characterCloseButton =
   characterDialog.querySelector(".character-close");
+
 const characterSymbol =
   characterDialog.querySelector(".character-symbol");
+
 const characterType =
   characterDialog.querySelector(".character-type");
+
 const characterName =
   characterDialog.querySelector(".character-name");
+
 const characterMeta =
   characterDialog.querySelector(".character-meta");
+
 const characterLost =
   characterDialog.querySelector(".character-lost");
+
 const characterQuote =
   characterDialog.querySelector(".character-quote");
+
 const characterDescription =
   characterDialog.querySelector(".character-description");
 
@@ -275,9 +283,17 @@ const detailIcon = detailPage.querySelector(".detail-icon");
 const detailKicker = detailPage.querySelector(".detail-kicker");
 const detailTitle = detailPage.querySelector(".detail-title");
 const detailSummary = detailPage.querySelector(".detail-summary");
-const detailDescription = detailPage.querySelector(".detail-description");
-const detailPlace = detailPage.querySelector(".detail-place");
-const detailSteps = detailPage.querySelector(".detail-steps");
+const detailDescription =
+  detailPage.querySelector(".detail-description");
+
+const detailPlace =
+  detailPage.querySelector(".detail-place") ||
+  detailPage.querySelector(
+    ".detail-info > div:first-child strong"
+  );
+
+const detailSteps =
+  detailPage.querySelector(".detail-steps");
 
 function openPlayDetail(id, updateHistory = true) {
   const play = plays[id];
@@ -289,7 +305,10 @@ function openPlayDetail(id, updateHistory = true) {
   detailTitle.textContent = play.title;
   detailSummary.textContent = play.summary;
   detailDescription.textContent = play.description;
-  detailPlace.textContent = play.place;
+
+  if (detailPlace) {
+    detailPlace.textContent = play.place;
+  }
 
   detailSteps.innerHTML = play.steps
     .map((step) => `<li>${step}</li>`)
@@ -322,8 +341,10 @@ function closePlayDetail(updateAddress = true) {
 }
 
 const picker = document.querySelector("#play-picker");
-const pickerTitle = picker.querySelector("#play-picker-title");
-const pickerList = picker.querySelector(".picker-list");
+const pickerTitle =
+  picker.querySelector("#play-picker-title");
+const pickerList =
+  picker.querySelector(".picker-list");
 
 function closePicker() {
   picker.classList.remove("open");
